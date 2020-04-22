@@ -1,11 +1,15 @@
 import React from 'react';
 
+import NormalizeStyles from './NormalizeStyles';
+import BaseStyles from './BaseStyles';
 import './fontStyles.css';
 
 const App = () => (
-  <div id='trell-clone'>
+  <>
+    <NormalizeStyles/>
+    <BaseStyles/>
     <h1>Trello Clone</h1>
-  </div>
+  </>
 );
 
 export default App;
