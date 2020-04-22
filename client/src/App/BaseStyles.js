@@ -6,6 +6,7 @@ export default createGlobalStyle`
   html, body, #root {
     margin: 0;
     height: 100%;
+    background-color: ${color.pageBG};
   }
 
   #root {

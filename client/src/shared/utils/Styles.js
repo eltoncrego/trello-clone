@@ -3,6 +3,7 @@ export const color = {
   lightText: '#818181',
   pageBG: '#ffffff',
   darkBGText: '#ffffff',
+  placeholderText: '#979797',
   brandPrimary: '#026aa7',
   lightShade: '#ffffff',
   inputBG: '#ffffff',
@@ -11,6 +12,22 @@ export const color = {
   confirm: '#5aac44',
   confirmHover: '#61bd4f',
 };
+
+// Dark Styles !!
+// {
+//   text: '#ffffff',
+//   lightText: '#f0f0f0',
+//   pageBG: '#3c3c3c',
+//   darkBGText: '#ffffff',
+//   placeholderText: '#dedede',
+//   brandPrimary: '#026aa7',
+//   lightShade: '#ffffff',
+//   inputBG: '#3c3c3c',
+//   cardBG: '#3c3c3c',
+//   listBG: '#818181',
+//   confirm: '#5aac44',
+//   confirmHover: '#61bd4f',
+// };
 
 export const font = {
   regular: 'font-family: "Lato", sans-serif; font-weight: 400;',

@@ -3,17 +3,20 @@ import { color, materials } from './../utils/Styles';
 
 export const StyledInput = styled.input`
   padding: 8px;
-  border: 2px solid ${props => props.bgOnNonActive || color.lightShade};
+  border: 2px solid ${props => props.bgOnNonActive || color.inputBG};
   outline: none;
-  background-color: ${props => props.bgOnNonActive || color.lightShade};
+  background-color: ${props => props.bgOnNonActive || color.inputBG};
   color: ${color.text};
   margin: ${props => props.margins};
   ${materials.inputBorderRadius}
   transition: all 100ms ease-in-out;
   transition-property: border, background-color;
+  &::placeholder {
+    color: ${color.placeholderText}
+  }
   &:focus {
     border: 2px solid ${color.brandPrimary};
-    background-color: ${color.lightShade};
+    background-color: ${color.inputBG};
   }
 `;
 
