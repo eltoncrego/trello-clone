@@ -19,8 +19,7 @@ export const StyledListTitle = styled.h1`
   ${font.size(12)}
 `;
 
-export const StyledListInput = styled.input`
-  margin: 0 16px;
+export const StyledInput = styled.input`
   padding: 8px;
   border: 2px solid ${color.inputBG};
   outline: none;
@@ -34,8 +33,11 @@ export const StyledListInput = styled.input`
   }
 `;
 
-export const StyledListButton = styled.div`
+export const SideButton = styled.div`
   padding: 8px 16px;
+  margin-left: 4px;
+  display: flex;
+  align-items: center;
   background-color: ${color.confirm};
   color: ${color.buttonColor};
   ${materials.inputBorderRadius};
