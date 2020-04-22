@@ -6,13 +6,18 @@ import AddList from '../add-list';
 const Board = () => {
   const [lists, setLists] = useState([]);
 
+  function handleNewList(newListTitle) {
+    const newList = { title: newListTitle };
+    setLists([newList, ...lists]);
+  }
+
   return(
     <BoardWrapper>
       <StyledHeader>
-        <StyledTitle onClick={() => setLists([...lists, 'whaddup'])}>Board Name</StyledTitle>
+        <StyledTitle>Board Name</StyledTitle>
         <StyledListContainer>
-          {lists.map((list, i) => <List key={i} title={list}/>)}
-          {<AddList noList={!lists.length}/>}
+          {lists.map((list, i) => <List key={i} title={list.title}/>)}
+          {<AddList noList={!lists.length} addListAction={handleNewList}/>}
         </StyledListContainer>
       </StyledHeader>
     </BoardWrapper>

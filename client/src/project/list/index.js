@@ -1,9 +1,15 @@
 import React from 'react';
+import { StyledList, StyledListTitle, StyledListHeader} from '../../shared/components/StyledComponents';
 
 const List = ({ title }) => {
-  console.log('rendered');
   return(
-    <h2>{ title }</h2>
+    <StyledList>
+      <StyledListHeader>
+        <StyledListTitle>
+            { title }
+        </StyledListTitle>
+      </StyledListHeader>
+    </StyledList>
   );
 };
 
