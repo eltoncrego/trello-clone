@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { MESSAGES } from '../../shared/utils/Messages';
-import { StyledList, StyledListTitle, StyledListHeader } from '../../shared/components/list/Styles';
-import { StyledInput, SideButton } from '../../shared/components/StyledComponents';
+import { MESSAGES } from '../../../shared/utils/Messages';
+import { StyledList, StyledListTitle, StyledListHeader } from '../../../shared/components/list/Styles';
+import { StyledInput, SideButton } from '../../../shared/components/StyledComponents';
 import { StyledAddListActions } from './Styles';
 
 const AddList = ({ noList, addListAction }) => {
