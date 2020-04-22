@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BoardWrapper, StyledTitle, StyledHeader, StyledListContainer } from './Styles';
-import List from '../list';
+import List from '../../shared/components/list';
 import AddList from '../add-list';
 
 const Board = () => {
