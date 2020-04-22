@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { font } from '../../shared/utils/Styles';
 
-export const BoardWrapper = styled.div`
+export const StyledBoardWrapper = styled.div`
   margin-left: 64px;
   flex: 1;
   padding: 16px 0;

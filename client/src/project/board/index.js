@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BoardWrapper, StyledTitle, StyledHeader, StyledListContainer } from './Styles';
+import { StyledBoardWrapper, StyledTitle, StyledHeader, StyledListContainer } from './Styles';
 import List from '../../shared/components/list';
 import AddList from '../add-list';
 
@@ -12,7 +12,7 @@ const Board = () => {
   }
 
   return(
-    <BoardWrapper>
+    <StyledBoardWrapper>
       <StyledHeader>
         <StyledTitle>Board Name</StyledTitle>
         <StyledListContainer>
@@ -20,7 +20,7 @@ const Board = () => {
           {<AddList noList={!lists.length} addListAction={handleNewList}/>}
         </StyledListContainer>
       </StyledHeader>
-    </BoardWrapper>
+    </StyledBoardWrapper>
   )
 };
 
