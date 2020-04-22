@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyledBoardWrapper, StyledTitle, StyledHeader, StyledListContainer } from './Styles';
 import List from '../../shared/components/list';
 import AddList from './add-list';
+import { MESSAGES } from './../../shared/utils/Messages';
 
 const Board = () => {
   const [lists, setLists] = useState([]);
@@ -36,7 +37,7 @@ const Board = () => {
   return(
     <StyledBoardWrapper>
       <StyledHeader>
-        <StyledTitle>Board Name</StyledTitle>
+        <StyledTitle>{ MESSAGES.BOARD_TITLE }</StyledTitle>
         <StyledListContainer>
           {getListItems()}
           {<AddList 
