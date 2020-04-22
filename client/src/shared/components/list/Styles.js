@@ -3,7 +3,7 @@ import { color, materials, font } from './../../utils/Styles';
 
 export const StyledList = styled.div`
   ${props => props.width ? `min-width: ${props.width};`: null}
-  background-color: ${color.listBGColor};
+  background-color: ${color.listBG};
   color: ${color.text};
   margin-right: 8px;
   ${materials.cardBorderRadius}
