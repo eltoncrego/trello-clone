@@ -4,21 +4,11 @@ import List from '../../shared/components/list';
 import AddList from '../add-list';
 
 const Board = () => {
-  const testLists = [
-    {
-      title: 'Test List',
-      cards: [
-        {
-          title: 'Test Card',
-        }
-      ]
-    }
-  ];
-
-  const [lists, setLists] = useState(testLists);
+  const [lists, setLists] = useState([]);
+  const [draggedCard, setDraggedCard] = useState({});
 
   function handleNewList(newListTitle) {
-    const newList = { title: newListTitle };
+    const newList = { title: newListTitle, cards: [] };
     setLists([newList, ...lists]);
   }
 
@@ -27,7 +17,7 @@ const Board = () => {
       <StyledHeader>
         <StyledTitle>Board Name</StyledTitle>
         <StyledListContainer>
-          {lists.map((list, i) => <List key={i} {...list}/>)}
+          {lists.map((list, i) => <List key={i} {...list} draggedCard={draggedCard} setDraggedCard={setDraggedCard}/>)}
           {<AddList noList={!lists.length} addListAction={handleNewList}/>}
         </StyledListContainer>
       </StyledHeader>
