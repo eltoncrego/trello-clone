@@ -5,13 +5,18 @@ import { MESSAGES } from './../../utils/Messages';
 import { color } from '../../utils/Styles';
 import Card from '../card';
 
-const List = ({ title, cards, draggedCard, setDraggedCard }) => {
+const List = ({ listKey, title, cards, draggedCard, setDraggedCard, setListKeyToRemoveCardFrom, dropCard }) => {
   const newCardInputValue = useInputValue('');
   
   function addANewCard(card) {
     cards.push(card);
     newCardInputValue.clear();
   }
+
+  function handleDraggedCard(key) {
+    setListKeyToRemoveCardFrom([listKey, key])
+    setDraggedCard(cards.slice(key)[0]);
+  };
 
   return(
     <StyledList 
@@ -22,7 +27,7 @@ const List = ({ title, cards, draggedCard, setDraggedCard }) => {
       onDrop={(event) => {
         event.stopPropagation();
         addANewCard(draggedCard);
-        setDraggedCard({});
+        dropCard();
       }}
     >
       <StyledListHeader>
@@ -31,7 +36,7 @@ const List = ({ title, cards, draggedCard, setDraggedCard }) => {
         </StyledListTitle>
       </StyledListHeader>
       {cards.map((card, i) => {
-        return(<Card key={i} title={card.title} setDraggedCard={setDraggedCard}/>)
+        return(<Card key={i} cardKey={i} title={card.title} startDrag={handleDraggedCard}/>)
       })}
       <StyledInput 
         placeholder={MESSAGES.ADD_A_CARD} 

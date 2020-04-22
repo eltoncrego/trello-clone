@@ -2,15 +2,11 @@ import React from 'react';
 
 import { StyledCardWrapper } from './Styles';
 
-const Card = ({ title, setDraggedCard }) => {
-  function onDragStart() {
-    setDraggedCard({title});
-  }
-
+const Card = ({ cardKey, title, startDrag }) => {
   return(
     <StyledCardWrapper 
       draggable
-      onDragStart={onDragStart}
+      onDragStart={() => startDrag(cardKey)}
     >
       <span>{title}</span>
     </StyledCardWrapper>
