@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { color, materials, font } from './../../utils/Styles';
 
 export const StyledList = styled.div`
+  ${props => props.width ? `min-width: ${props.width};`: null}
   background-color: ${color.listBGColor};
   color: ${color.listTextColor};
   margin-right: 8px;

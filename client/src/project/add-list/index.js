@@ -15,7 +15,7 @@ const AddList = ({ noList, addListAction }) => {
   }
 
   return(
-    <StyledList>
+    <StyledList width='285px'>
       <StyledListHeader>
         <StyledListTitle>
           {noList ? MESSAGES.NO_LIST : MESSAGES.ADD_LIST }
