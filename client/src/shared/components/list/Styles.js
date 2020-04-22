@@ -4,7 +4,7 @@ import { color, materials, font } from './../../utils/Styles';
 export const StyledList = styled.div`
   ${props => props.width ? `min-width: ${props.width};`: null}
   background-color: ${color.listBGColor};
-  color: ${color.listTextColor};
+  color: ${color.text};
   margin-right: 8px;
   ${materials.cardBorderRadius}
   transition: all 200ms ease-in-out;
@@ -18,6 +18,6 @@ export const StyledListTitle = styled.h1`
   margin: 0;
   margin-left: 0;
   text-transform: uppercase;
-  color: ${color.listTitleColor};
+  color: ${color.lightText};
   ${font.size(12)}
 `;

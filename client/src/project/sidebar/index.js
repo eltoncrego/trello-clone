@@ -8,7 +8,7 @@ const SideBar = () => {
   return(
     <NavLeft>
       <StyledHeader>
-        <Logo width='32px' fill={color.secondaryPrimary}/>
+        <Logo width='32px' fill={color.lightShade}/>
         <StyledTitle>{MESSAGES.TITLE}</StyledTitle>
       </StyledHeader>
     </NavLeft>

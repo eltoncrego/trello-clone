@@ -3,9 +3,9 @@ import { color, materials } from './../utils/Styles';
 
 export const StyledInput = styled.input`
   padding: 8px;
-  border: 2px solid ${props => props.bgOnNonActive || color.inputBG};
+  border: 2px solid ${props => props.bgOnNonActive || color.lightShade};
   outline: none;
-  background-color: ${props => props.bgOnNonActive || color.inputBG};
+  background-color: ${props => props.bgOnNonActive || color.lightShade};
   color: ${color.text};
   margin: ${props => props.margins};
   ${materials.inputBorderRadius}
@@ -13,7 +13,7 @@ export const StyledInput = styled.input`
   transition-property: border, background-color;
   &:focus {
     border: 2px solid ${color.brandPrimary};
-    background-color: ${color.inputBG};
+    background-color: ${color.lightShade};
   }
 `;
 
@@ -23,7 +23,7 @@ export const SideButton = styled.div`
   display: flex;
   align-items: center;
   background-color: ${color.confirm};
-  color: ${color.buttonColor};
+  color: ${color.darkBGText};
   ${materials.inputBorderRadius};
   transition: all 100ms ease-in-out;
   transition-property: background-color;

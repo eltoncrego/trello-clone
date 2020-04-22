@@ -41,7 +41,7 @@ const List = ({ listKey, title, cards, draggedCard, setDraggedCard, setListKeyTo
       <StyledInput 
         placeholder={MESSAGES.ADD_A_CARD} 
         margins={'0 16px 16px 16px'} 
-        bgOnNonActive={color.listBGColor}
+        bgOnNonActive={color.listBG}
         onKeyPress={(e) => e.key === 'Enter' ? addANewCard({title: newCardInputValue.value}) : null}
         {...newCardInputValue}/>
     </StyledList>

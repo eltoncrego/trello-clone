@@ -1,15 +1,15 @@
 export const color = {
   text: '#3c3c3c',
+  lightText: '#818181',
+  pageBG: '#ffffff',
+  darkBGText: '#ffffff',
   brandPrimary: '#026aa7',
-  secondaryPrimary: '#ffffff',
+  lightShade: '#ffffff',
   inputBG: '#ffffff',
-  listBGColor: '#f5f5f5',
-  listTextColor: '#3c3c3c',
-  listTitleColor: '#818181',
+  cardBG: '#ffffff',
+  listBG: '#f5f5f5',
   confirm: '#5aac44',
-  buttonColor: '#ffffff',
   confirmHover: '#61bd4f',
-  cardBG: '#ffffff'
 };
 
 export const font = {

@@ -34,7 +34,7 @@ export const StyledHeader = styled.div`
 `;
 
 export const StyledTitle = styled.h1`
-  color: ${color.secondaryPrimary};
+  color: ${color.lightShade};
   margin: 0 4px 0 0;
   line-height: 24px;
   width: 129px;
