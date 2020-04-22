@@ -13,6 +13,7 @@ export const NavLeft = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 16px 0;
   width: 56px;
   overflow-x: hidden;
   transition: all 100ms;
