@@ -9,6 +9,7 @@ export const color = {
   confirm: '#5aac44',
   buttonColor: '#ffffff',
   confirmHover: '#61bd4f',
+  cardBG: '#ffffff'
 };
 
 export const font = {

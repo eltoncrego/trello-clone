@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import { StyledCardWrapper } from './Styles';
 
 const Card = ({ title }) => {
+  const [isDragTarget, setIsDragTarget] = useState(false);
   return(
-    <div id='card'>
-      <h1>{title}</h1>
-    </div>
+    <StyledCardWrapper isDragTarget={isDragTarget}>
+      <span>{title}</span>
+    </StyledCardWrapper>
   )
 };
 

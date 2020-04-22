@@ -4,7 +4,18 @@ import List from '../../shared/components/list';
 import AddList from '../add-list';
 
 const Board = () => {
-  const [lists, setLists] = useState([]);
+  const testLists = [
+    {
+      title: 'Test List',
+      cards: [
+        {
+          title: 'Test Card',
+        }
+      ]
+    }
+  ];
+
+  const [lists, setLists] = useState(testLists);
 
   function handleNewList(newListTitle) {
     const newList = { title: newListTitle };
@@ -16,7 +27,7 @@ const Board = () => {
       <StyledHeader>
         <StyledTitle>Board Name</StyledTitle>
         <StyledListContainer>
-          {lists.map((list, i) => <List key={i} title={list.title}/>)}
+          {lists.map((list, i) => <List key={i} {...list}/>)}
           {<AddList noList={!lists.length} addListAction={handleNewList}/>}
         </StyledListContainer>
       </StyledHeader>
