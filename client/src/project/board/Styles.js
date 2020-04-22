@@ -20,4 +20,5 @@ export const StyledTitle = styled.h1`
 export const StyledListContainer = styled.div`
   margin-top: 16px;
   display: flex;
+  align-items: flex-start;
 `;

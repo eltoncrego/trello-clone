@@ -1,10 +1,15 @@
 import React from 'react';
 
-const Card = ({ title }) => {
+import { StyledCardWrapper } from './Styles';
+
+const Card = ({ cardKey, title, startDrag }) => {
   return(
-    <div id='card'>
-      <h1>{title}</h1>
-    </div>
+    <StyledCardWrapper 
+      draggable
+      onDragStart={() => startDrag(cardKey)}
+    >
+      <span>{title}</span>
+    </StyledCardWrapper>
   )
 };
 

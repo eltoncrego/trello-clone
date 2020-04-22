@@ -6,6 +6,7 @@ export const StyledList = styled.div`
   color: ${color.listTextColor};
   margin-right: 8px;
   ${materials.cardBorderRadius}
+  transition: all 200ms ease-in-out;
 `;
 
 export const StyledListHeader = styled.div`
