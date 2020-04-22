@@ -4,11 +4,13 @@ import NormalizeStyles from './NormalizeStyles';
 import BaseStyles from './BaseStyles';
 import './fontStyles.css';
 
+import SideBar from './../project/sidebar';
+
 const App = () => (
   <>
     <NormalizeStyles/>
     <BaseStyles/>
-    <h1>Trello Clone</h1>
+    <SideBar/>
   </>
 );
 
