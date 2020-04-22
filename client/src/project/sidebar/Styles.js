@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { zIndices, color, font } from '../../shared/Styles';
+import { zIndices, color, font } from '../../shared/utils/Styles';
 
 import Logo from './../../shared/components/Logo';
 
@@ -13,23 +13,21 @@ export const NavLeft = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
   width: 56px;
   overflow-x: hidden;
   transition: all 100ms;
+  transition-property: width, box-shadow;
   &:hover {
     width: 201px;
     box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.6);
   }
 `;
 
-export const StyledLogo = styled(Logo)``;
-
 export const StyledHeader = styled.div`
   display: flex;
   align-items: center;
-  transition: opacity 100ms ease-in-out;
   padding: 16px;
+  transition: opacity 150ms ease-in-out;
   &:hover {
     cursor: pointer;
     opacity: 0.6;

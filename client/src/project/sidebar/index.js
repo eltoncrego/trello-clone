@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
-import { NavLeft, StyledTitle, StyledLogo, StyledHeader } from './Styles';
-import { color } from '../../shared/Styles';
+import React from 'react';
+import { NavLeft, StyledTitle, StyledHeader } from './Styles';
+import { color } from '../../shared/utils/Styles';
+import { MESSAGES } from '../../shared/utils/Messages';
+import Logo from './../../shared/components/Logo';
 
 const SideBar = () => {
-  const [fullWidth, setFullWidth] = useState(false);
-
   return(
-    <NavLeft 
-      onMouseEnter={() => setFullWidth(true)}
-      onMouseLeave={() => setFullWidth(false)}
-    >
+    <NavLeft>
       <StyledHeader>
-        <StyledLogo width='24px' fill={color.secondaryPrimary} />
-        <StyledTitle visible={fullWidth}>Trello Clone</StyledTitle>
+        <Logo width='24px' fill={color.secondaryPrimary}/>
+        <StyledTitle>{MESSAGES.TITLE}</StyledTitle>
       </StyledHeader>
     </NavLeft>
   );
