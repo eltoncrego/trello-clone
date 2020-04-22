@@ -3,15 +3,17 @@ import { color, materials } from './../utils/Styles';
 
 export const StyledInput = styled.input`
   padding: 8px;
-  border: 2px solid ${color.inputBG};
+  border: 2px solid ${props => props.bgOnNonActive || color.inputBG};
   outline: none;
-  background-color: ${color.inputBG};
+  background-color: ${props => props.bgOnNonActive || color.inputBG};
   color: ${color.text};
+  margin: ${props => props.margins};
   ${materials.inputBorderRadius}
   transition: all 100ms ease-in-out;
-  transition-property: border;
+  transition-property: border, background-color;
   &:focus {
     border: 2px solid ${color.brandPrimary};
+    background-color: ${color.inputBG};
   }
 `;
 

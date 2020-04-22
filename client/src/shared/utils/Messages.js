@@ -4,4 +4,5 @@ export const MESSAGES = {
   ADD_LIST: 'Add Another List',
   ADD_LIST_TITLE: 'New List Title',
   ADD_LIST_CONFIRM: 'Add List',
+  ADD_A_CARD: 'Add a New Card',
 }

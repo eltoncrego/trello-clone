@@ -12,12 +12,12 @@ export const NavLeft = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 16px 0;
-  width: 56px;
+  width: 64px;
   overflow-x: hidden;
   transition: all 100ms;
   transition-property: width, box-shadow;
   &:hover {
-    width: 201px;
+    width: 209px;
     box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.6);
   }
 `;
