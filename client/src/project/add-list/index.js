@@ -4,11 +4,13 @@ import { StyledList, StyledListTitle, StyledListHeader, StyledInput, SideButton 
 import { StyledAddListActions } from './Styles';
 
 const AddList = ({ noList, addListAction }) => {
-  const newListTitle = useFormValue('');
+  const newListTitle = useInputValue('');
 
   function addANewList() {
-    newListTitle.clear();
-    addListAction(newListTitle.value);
+    if(newListTitle.value.length) {
+      newListTitle.clear();
+      addListAction(newListTitle.value);
+    }
   }
 
   return(
@@ -19,14 +21,17 @@ const AddList = ({ noList, addListAction }) => {
         </StyledListTitle>
       </StyledListHeader>
       <StyledAddListActions>
-        <StyledInput placeholder={MESSAGES.ADD_LIST_TITLE} {...newListTitle}></StyledInput> 
+        <StyledInput 
+          placeholder={MESSAGES.ADD_LIST_TITLE}
+          onKeyPress={(e) => e.key === 'Enter' ? addANewList() : null}
+          {...newListTitle}></StyledInput> 
         <SideButton onClick={addANewList}>{MESSAGES.ADD_LIST_CONFIRM}</SideButton>
       </StyledAddListActions>
     </StyledList>
   );
 };
 
-function useFormValue(initialValue) {
+function useInputValue(initialValue) {
   const [value, setValue] = useState(initialValue);
   function handleChange(e) {
     setValue(e.target.value);
