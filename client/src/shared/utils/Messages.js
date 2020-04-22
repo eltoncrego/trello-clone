@@ -1,3 +1,7 @@
 export const MESSAGES = {
-  TITLE: 'Trello Clone'
+  TITLE: 'Trello Clone',
+  NO_LIST: 'Create a List',
+  ADD_LIST: 'Add Another List',
+  ADD_LIST_TITLE: 'New List Title',
+  ADD_LIST_CONFIRM: 'Add List',
 }
