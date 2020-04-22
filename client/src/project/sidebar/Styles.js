@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { zIndices, color, font } from '../../shared/utils/Styles';
 
-import Logo from './../../shared/components/Logo';
-
 export const NavLeft = styled.div`
   z-index: ${zIndices.navLeft};
   position: fixed;
