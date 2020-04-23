@@ -27,4 +27,6 @@ export const font = {
 export const componentParams = {
   fieldBorderRadius: '4px',
   fieldPadding: '16px',
+  fieldLessPadding: '8px',
+  fieldMediumPadding: '12px',
 };

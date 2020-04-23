@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyledPlayground } from './PlaygroundStyles';
+import { PlaygroundComponent } from '../../Constants/PlaygroundComponent';
 
-export const Playground = ({ componentToRender }) => (
+export const Playground = () => (
   <StyledPlayground>
-    {componentToRender()}
+    <PlaygroundComponent/>
   </StyledPlayground>
 );

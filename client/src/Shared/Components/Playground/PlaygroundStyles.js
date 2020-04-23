@@ -3,6 +3,7 @@ import { color } from '../../SharedStyles';
 
 export const StyledPlayground = styled.div`
   border: 8px solid ${color.secondary};
+  background-color: ${color.backgroundPrimary};
   flex: 1;
   display: flex;
   align-items: center;

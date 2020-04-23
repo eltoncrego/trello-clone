@@ -10,7 +10,7 @@ const App = () => (
   <>
     <NormalizeStyles/>
     <BaseStyles/>
-    {featureFlags.playground ? <Playground componentToRender={() => null}/> : null}
+    {featureFlags.playground ? <Playground/> : null}
   </>
 );
 

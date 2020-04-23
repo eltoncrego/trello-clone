@@ -1,3 +1,3 @@
 export const featureFlags = {
-  playground: true,
+  playground: false,
 }
