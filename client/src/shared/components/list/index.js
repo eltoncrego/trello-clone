@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyledList, StyledListTitle, StyledListHeader} from './Styles';
 import { StyledInput } from '../StyledComponents';
 import { MESSAGES } from './../../utils/Messages';
