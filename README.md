@@ -1,5 +1,9 @@
 # Trello Clone
-This repo was created for me to practice building a larger React application. I wanted to make something that was scalable, so if you notice anything that seems off, please let me know! 🚀
+This repo was created for me to practice building a larger React application. I've based it heavily on some pretty popular posts.
 
-## Installed Packages
-1. [styled-components](https://styled-components.com/) - I wanted to try out using styled components as a library, since it seems like this is what larger scale projects are opting for with React.
+First off, I'd like to credit the architecture and organization to [Ivor Reic](https://github.com/oldboyxx)! His [Jira Clone Project](https://github.com/oldboyxx/jira_clone) is honestly inspiring to say the least and I strive to create projects that are as neat as that repo.
+
+Secondly, I'd like to credit the overall design and feel of the project to [The Team Behind This Behance Post](https://www.behance.net/gallery/47031411/Trello-Atlassian-Redesign). Their case study of the current Trello product, color palette, and font choices inspired me to work towards developing their mockups.
+
+## Packages
+1. [styled-components](https://styled-components.com/) - I've used this primarily so that I can get props into my CSS code. Styled components also utilizes SASS syntax which is nice for bundling styling and components into one neat little package.

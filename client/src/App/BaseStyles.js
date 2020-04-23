@@ -1,19 +1,17 @@
 import { createGlobalStyle } from 'styled-components';
-
-import { color, font } from '../shared/utils/Styles';
+import { color, font } from '../Shared/SharedStyles';
 
 export default createGlobalStyle`
-  html, body, #root {
+  html, body {
     margin: 0;
     height: 100%;
-    background-color: ${color.pageBG};
+    background-color: ${color.backgroundPrimary};
   }
 
-  #root {
-    display: flex;
-    flex-direction: column;
-    color: ${color.text};
-    ${font.regular};
-    ${font.size(14)};
+  body {
+    color: ${color.textDarkest};
+    ${font.regular}
+    ${font.size(16)}
+    line-height: 1.2;
   }
 `;
