@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, componentStyles } from '../../Utils/SharedStyles';
+import { color, componentStyles, spices } from '../../Utils/SharedStyles';
 import { StyledInputIcon, StyledInputIconContainer } from './InputIcon/InputIconStyles';
 
 export const StyledInput = styled.input`
@@ -19,6 +19,8 @@ export const StyledInputContainer = styled.div`
   border-radius: ${componentStyles.borderRadius};
   display: flex;
   align-items: center;
+  ${spices.interactionTransition};
+  transition-property: border-color;
   &:focus-within {
     border-color: ${color.borderInputFocus};
   }
