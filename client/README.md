@@ -9,9 +9,9 @@ The main rule to follow: **Files from one module can only import from ancestor f
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `src/index.js`  | The entry file. This is where we import babel polyfills and render the App into the root DOM node. |
 | `src/index.html` | The only HTML file in our App. All scripts and styles will be injected here by React. |
-| `src/app`        | Main application routes, components that need to be mounted at all times regardless of current route, global css styles, fonts, etc. Basically anything considered global / ancestor of all modules. |
-| `src/project`    | Project module |
-| `src/shared`     | Components, constants, utils, hooks, styles etc. that can be used anywhere in the codebase. Any module is allowed to import from shared. |
+| `src/App`        | Main application routes, components that need to be mounted at all times regardless of current route, global css styles, fonts, etc. Basically anything considered global / ancestor of all modules. |
+| `src/Views`    | Contains the main app views like Login, Boards, etc. |
+| `src/Shared`     | Components, constants, utils, hooks, styles etc. that can be used anywhere in the codebase. Any module is allowed to import from shared. |
 ---
 ## Project Best Practices
 The following list are some best practices that I've tried to follow with this project. As I continue to build out more features and add more and more things, I've realized that adhering to strict rules is going to help me keep files, functions, and components organized.
