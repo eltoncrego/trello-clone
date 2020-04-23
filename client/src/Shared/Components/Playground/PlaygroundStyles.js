@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { color } from '../../SharedStyles';
 
 export const StyledPlayground = styled.div`
-  border: 8px solid red;
+  border: 8px solid ${color.secondary};
   flex: 1;
   display: flex;
   align-items: center;

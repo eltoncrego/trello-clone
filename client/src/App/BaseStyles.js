@@ -20,4 +20,12 @@ export default createGlobalStyle`
     display: flex;
     flex-direction: column;
   }
+
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    ${font.regular}
+  }
 `;
