@@ -1,15 +1,12 @@
 import React from 'react';
 import NormalizeStyles from './NormalizeStyles';
 import BaseStyles from './BaseStyles';
-import SideBar from './../project/sidebar';
-import Board from './../project/board';
+import './FontStyles.css';
 
 const App = () => (
   <>
     <NormalizeStyles/>
     <BaseStyles/>
-    <SideBar/>
-    <Board/>
   </>
 );
 

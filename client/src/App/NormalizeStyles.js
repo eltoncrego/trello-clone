@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+/** DO NOT ALTER THIS FILE. It is a copy of https://necolas.github.io/normalize.css/ */
+
 export default createGlobalStyle`
   html {
     line-height: 1.15;
