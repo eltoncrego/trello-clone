@@ -4,7 +4,7 @@ import BaseStyles from './BaseStyles';
 import './FontStyles.css';
 
 import { featureFlags } from '../Shared/Constants/FeatureFlags';
-import { Playground } from '../Shared/Components/Playground/Playground';
+import Playground from '../Shared/Components/Playground/Playground';
 
 const App = () => (
   <>

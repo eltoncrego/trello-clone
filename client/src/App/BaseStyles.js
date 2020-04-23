@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { color, font } from '../Shared/SharedStyles';
+import { color, font } from '../Shared/Utils/SharedStyles';
 
 export default createGlobalStyle`
   html, body, #root {

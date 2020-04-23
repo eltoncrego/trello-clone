@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyledInput, StyledInputContainer } from './InputStyles';
-import { InputIcon } from './InputIcon/InputIcon';
+import InputIcon from './InputIcon/InputIcon';
 
-export const Input = ({ icon, inputProps }) => {
+const Input = ({ icon, inputProps }) => {
   return(
     <StyledInputContainer>
       {icon ? <InputIcon icon={icon}/> : null}
@@ -10,3 +10,5 @@ export const Input = ({ icon, inputProps }) => {
     </StyledInputContainer>
   );
 };
+
+export default Input;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, componentParams } from '../../../SharedStyles';
+import { color, componentParams } from '../../../Utils/SharedStyles';
 
 export const StyledInputIcon = styled.i`
   color: ${color.textLight};
