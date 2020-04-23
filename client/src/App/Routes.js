@@ -1,8 +1,13 @@
 import React from 'react';
-import { Router } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import PageError from '../Shared/Components/PageError/PageError';
 
 const Routes = () => (
-  <Router>
-    
-  </Router>
+  <BrowserRouter>
+    <Switch>
+      <Route component={PageError}/>
+    </Switch>
+  </BrowserRouter>
 );
+
+export default Routes;

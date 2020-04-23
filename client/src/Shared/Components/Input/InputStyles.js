@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { color, componentParams } from '../../Utils/SharedStyles';
+import { color, componentStyles } from '../../Utils/SharedStyles';
 import { StyledInputIcon, StyledInputIconContainer } from './InputIcon/InputIconStyles';
 
 export const StyledInput = styled.input`
   flex: 1;
-  padding: ${componentParams.fieldPadding};
+  padding: ${componentStyles.fieldPadding};
   border: none;
   background: none;
   outline: none;
@@ -16,7 +16,7 @@ export const StyledInput = styled.input`
 export const StyledInputContainer = styled.div`
   border: 1px solid ${color.borderLightest};
   background-color: ${color.backgroundLight};
-  border-radius: ${componentParams.fieldBorderRadius};
+  border-radius: ${componentStyles.borderRadius};
   display: flex;
   align-items: center;
   &:focus-within {

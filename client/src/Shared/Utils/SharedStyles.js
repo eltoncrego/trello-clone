@@ -1,3 +1,5 @@
+import { css } from 'styled-components';
+
 export const color = {
   backgroundPrimary: '#F6F7FB',
   backgroundLight: '#FFFFFF',
@@ -24,9 +26,23 @@ export const font = {
   size: size => `font-size: ${size}px;`,
 };
 
-export const componentParams = {
-  fieldBorderRadius: '4px',
+export const componentStyles = {
+  paddingLarge: '64px',
+  paddingMedium: '32px',
+  borderRadius: '4px',
   fieldPadding: '16px',
   fieldLessPadding: '8px',
   fieldMediumPadding: '12px',
+  itemSpacing: '8px',
+  itemSpacingMedium: '12px',
+  itemSpacingLarge: '16px',
+};
+
+export const spices = {
+  boxShadowLight: css`
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  `,
+  boxShadowMedium: css`
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+  `,
 };
