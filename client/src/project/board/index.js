@@ -9,6 +9,13 @@ const Board = () => {
   const [draggedCard, setDraggedCard] = useState({});
   const [listKeyToRemoveCardFrom, setListKeyToRemoveCardFrom] = useState([]);
 
+  const cardDragProps = {
+    draggedCard,
+    setDraggedCard,
+    listKeyToRemoveCardFrom,
+    setListKeyToRemoveCardFrom
+  };
+
   function handleNewList(newListTitle) {
     const newList = { title: newListTitle, cards: [] };
     setLists([newList, ...lists]);
@@ -25,12 +32,9 @@ const Board = () => {
       <List 
         key={i} 
         listKey={i}
-        draggedCard={draggedCard} 
-        setDraggedCard={setDraggedCard} 
-        listKeyToRemoveCardFrom={listKeyToRemoveCardFrom}
-        setListKeyToRemoveCardFrom={setListKeyToRemoveCardFrom} 
         dropCard={handleCardDrop}
-        {...list} />
+        {...list}
+        {...cardDragProps} />
     )));    
   }
 

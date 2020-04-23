@@ -12,6 +12,10 @@ export const StyledList = styled.div`
 
 export const StyledListHeader = styled.div`
   padding: 16px;
+  ${materials.cardBorderRadius}
+  &:hover {
+    ${props => props.draggable ? 'cursor: grab;' : null}
+  }
 `;
 
 export const StyledListTitle = styled.h1`
