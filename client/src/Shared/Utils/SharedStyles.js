@@ -54,4 +54,13 @@ export const spices = {
   boxShadowMedium: color => css`
     box-shadow: 0 5px 10px 0 ${color ? color : 'rgba(0, 0, 0, 0.1)'};
   `,
+  noSelect: css`
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Opera and Firefox */
+  `,
 };

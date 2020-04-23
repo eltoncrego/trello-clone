@@ -7,6 +7,7 @@ export const StyledButtonContainer = styled.div`
   background-color: ${color.primary};
   border-radius: ${componentStyles.borderRadius};
   text-transform: capitalize;
+  ${spices.noSelect};
   ${spices.interactionTransition};
   ${spices.boxShadowMedium(color.glowPrimary)};
   transition-property: background-color, box-shadow;
