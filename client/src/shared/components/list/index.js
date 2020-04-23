@@ -4,9 +4,21 @@ import { StyledInput } from '../StyledComponents';
 import { MESSAGES } from './../../utils/Messages';
 import { color } from '../../utils/Styles';
 import Card from '../card';
+import { useInputValue } from '../../utils/CustomHooks';
 
 const List = ({ listKey, title, cards, draggedCard, setDraggedCard, setListKeyToRemoveCardFrom, dropCard }) => {
   const newCardInputValue = useInputValue('');
+
+  function dragOver(event) {
+    event.stopPropagation();
+    event.preventDefault();
+  }
+
+  function drop(event) {
+    event.stopPropagation();
+    addANewCard(draggedCard);
+    dropCard();
+  }
   
   function addANewCard(card) {
     cards.push(card);
@@ -18,49 +30,42 @@ const List = ({ listKey, title, cards, draggedCard, setDraggedCard, setListKeyTo
     setDraggedCard(cards.slice(key)[0]);
   };
 
+  function handleKeyPress(event) {
+    if(event.key === 'Enter') {
+      addANewCard({title: newCardInputValue.value});
+    }
+  }
+  
+  function getCards() {
+    return(cards.map((card, i) => (
+      <Card 
+        key={i} 
+        cardKey={i} 
+        title={card.title} 
+        startDrag={handleDraggedCard}
+      />
+    )));
+  }
+
   return(
     <StyledList 
-      onDragOver={(event) => {
-        event.stopPropagation();
-        event.preventDefault();
-      }} 
-      onDrop={(event) => {
-        event.stopPropagation();
-        addANewCard(draggedCard);
-        dropCard();
-      }}
+      onDragOver={dragOver} 
+      onDrop={drop}
     >
       <StyledListHeader>
         <StyledListTitle>
             { title }
         </StyledListTitle>
       </StyledListHeader>
-      {cards.map((card, i) => {
-        return(<Card key={i} cardKey={i} title={card.title} startDrag={handleDraggedCard}/>)
-      })}
+      {getCards()}
       <StyledInput 
         placeholder={MESSAGES.ADD_A_CARD} 
         margins={'0 16px 16px 16px'} 
-        bgOnNonActive={color.listBGColor}
-        onKeyPress={(e) => e.key === 'Enter' ? addANewCard({title: newCardInputValue.value}) : null}
+        bgOnNonActive={color.listBG}
+        onKeyPress={handleKeyPress}
         {...newCardInputValue}/>
     </StyledList>
   );
 };
-
-function useInputValue(initialValue) {
-  const [value, setValue] = useState(initialValue);
-  function handleChange(e) {
-    setValue(e.target.value);
-  }
-  function clear() {
-    setValue('');
-  }
-  return {
-    value,
-    onChange: handleChange,
-    clear
-  };
-}
 
 export default List;

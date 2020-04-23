@@ -11,6 +11,9 @@ export const StyledInput = styled.input`
   ${materials.inputBorderRadius}
   transition: all 100ms ease-in-out;
   transition-property: border, background-color;
+  &::placeholder {
+    color: ${color.placeholderText}
+  }
   &:focus {
     border: 2px solid ${color.brandPrimary};
     background-color: ${color.inputBG};
@@ -23,7 +26,7 @@ export const SideButton = styled.div`
   display: flex;
   align-items: center;
   background-color: ${color.confirm};
-  color: ${color.buttonColor};
+  color: ${color.darkBGText};
   ${materials.inputBorderRadius};
   transition: all 100ms ease-in-out;
   transition-property: background-color;

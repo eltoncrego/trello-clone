@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { StyledBoardWrapper, StyledTitle, StyledHeader, StyledListContainer } from './Styles';
 import List from '../../shared/components/list';
-import AddList from '../add-list';
+import AddList from './add-list';
+import { MESSAGES } from './../../shared/utils/Messages';
 
 const Board = () => {
   const [lists, setLists] = useState([]);
@@ -19,13 +20,30 @@ const Board = () => {
     setDraggedCard({});
   }
 
+  function getListItems() {
+    return(lists.map((list, i) => (
+      <List 
+        key={i} 
+        listKey={i}
+        draggedCard={draggedCard} 
+        setDraggedCard={setDraggedCard} 
+        listKeyToRemoveCardFrom={listKeyToRemoveCardFrom}
+        setListKeyToRemoveCardFrom={setListKeyToRemoveCardFrom} 
+        dropCard={handleCardDrop}
+        {...list} />
+    )));    
+  }
+
   return(
     <StyledBoardWrapper>
       <StyledHeader>
-        <StyledTitle>Board Name</StyledTitle>
+        <StyledTitle>{ MESSAGES.BOARD_TITLE }</StyledTitle>
         <StyledListContainer>
-          {lists.map((list, i) => <List key={i} listKey={i} {...list} draggedCard={draggedCard} setDraggedCard={setDraggedCard} listKeyToRemoveCardFrom={listKeyToRemoveCardFrom} setListKeyToRemoveCardFrom={setListKeyToRemoveCardFrom} dropCard={handleCardDrop}/>)}
-          {<AddList noList={!lists.length} addListAction={handleNewList}/>}
+          {getListItems()}
+          {<AddList 
+            noList={!lists.length} 
+            addListAction={handleNewList}
+          />}
         </StyledListContainer>
       </StyledHeader>
     </StyledBoardWrapper>
