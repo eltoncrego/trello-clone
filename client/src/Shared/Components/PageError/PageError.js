@@ -2,17 +2,18 @@ import React from 'react';
 import { StyledPageError, StyledPageErrorCard, StyledPageErrorHeader, StyledErrorTitle} from './PageErrorStyles';
 import { StyledIcon } from '../StyledComponents';
 import { color } from '../../Utils/SharedStyles';
+import { ERROR } from '../../Constants/Messages';
 
 const PageError = () => (
   <StyledPageError>
     <StyledPageErrorCard>
       <StyledPageErrorHeader>
         <StyledIcon className='material-icons md-24' color={color.primary}>
-          error
+          {ERROR.ICON}
         </StyledIcon>
-        <StyledErrorTitle>This page doesn't exist</StyledErrorTitle>
+        <StyledErrorTitle>{ERROR.TITLE}</StyledErrorTitle>
       </StyledPageErrorHeader>
-      If you think this is a mistake please let me know.
+      {ERROR.DESC}
     </StyledPageErrorCard>
   </StyledPageError>
 );
