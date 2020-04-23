@@ -12,3 +12,7 @@ The main rule to follow: **Files from one module can only import from ancestor f
 | `src/app`        | Main application routes, components that need to be mounted at all times regardless of current route, global css styles, fonts, etc. Basically anything considered global / ancestor of all modules. |
 | `src/project`    | Project module |
 | `src/shared`     | Components, constants, utils, hooks, styles etc. that can be used anywhere in the codebase. Any module is allowed to import from shared. |
+---
+## Project Best Practices
+The following list are some best practices that I've tried to follow with this project. As I continue to build out more features and add more and more things, I've realized that adhering to strict rules is going to help me keep files, functions, and components organized.
+- [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single-responsibility_principle): As I add more components, business logic, and feature functionality. Maintaining the notion that each file and component is responsible for **one thing** is incredibly important. This helps keep files smaller and more manageable at the expense of more files.
