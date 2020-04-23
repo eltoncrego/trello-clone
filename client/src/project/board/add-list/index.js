@@ -3,7 +3,7 @@ import { MESSAGES } from '../../../shared/utils/Messages';
 import { StyledList, StyledListTitle, StyledListHeader } from '../../../shared/components/list/Styles';
 import { StyledInput, SideButton } from '../../../shared/components/StyledComponents';
 import { StyledAddListActions } from './Styles';
-import { useInputValue } from './../../../shared/utils/Hooks';
+import { useInputValue } from '../../../shared/utils/CustomHooks';
 
 const AddList = ({ noList, addListAction }) => {
   const newListTitle = useInputValue('');
