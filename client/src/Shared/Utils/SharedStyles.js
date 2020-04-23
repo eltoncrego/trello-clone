@@ -12,7 +12,7 @@ export const color = {
   textDark: '#323B51',
   textMedium: '#51586B',
   textLight: '#979BA6',
-  textOnLink: '#ffffff',
+  textOnColor: '#ffffff',
   textLink: '#4680FF',
 
   borderLightest: '#dfe1e6',
@@ -21,6 +21,8 @@ export const color = {
 
   glowPrimary: 'rgba(70, 128, 255, 0.3)',
   glowPrimaryHover: 'rgba(56, 102, 204, 0.3)',
+
+  scrim: 'rgba(14, 25, 51, 0.4)',
 };
 
 export const font = {
@@ -49,10 +51,10 @@ export const spices = {
     transition: all 100ms ease-in-out;
   `,
   boxShadowLight: color => css`
-    box-shadow: 0 2px 4px 0 ${color ? color : 'rgba(0, 0, 0, 0.1)'};
+    box-shadow: 0 2px 4px 0 ${color ? color : 'rgba(14, 25, 51, 0.1)'};
   `,
   boxShadowMedium: color => css`
-    box-shadow: 0 5px 10px 0 ${color ? color : 'rgba(0, 0, 0, 0.1)'};
+    box-shadow: 0 5px 10px 0 ${color ? color : 'rgba(14, 25, 51, 0.1)'};
   `,
   noSelect: css`
     -webkit-touch-callout: none; /* iOS Safari */
@@ -64,3 +66,9 @@ export const spices = {
                                     supported by Chrome, Opera and Firefox */
   `,
 };
+
+export const zIndexes = {
+  bg: '0',
+  scrim: '1',
+  overScrim: '2',
+}

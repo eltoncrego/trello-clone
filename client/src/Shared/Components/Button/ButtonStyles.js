@@ -3,7 +3,7 @@ import { componentStyles, color, spices } from '../../Utils/SharedStyles';
 
 export const StyledButtonContainer = styled.div`
   padding: ${componentStyles.fieldPadding} ${componentStyles.fieldLargePadding};
-  color: ${color.textOnLink};
+  color: ${color.textOnColor};
   background-color: ${color.primary};
   border-radius: ${componentStyles.borderRadius};
   text-transform: capitalize;
