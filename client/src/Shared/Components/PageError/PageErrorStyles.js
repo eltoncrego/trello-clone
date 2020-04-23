@@ -12,7 +12,7 @@ export const StyledPageErrorCard = styled.div`
   background-color: ${color.backgroundLight};
   padding: ${componentStyles.paddingMedium};
   border-radius: ${componentStyles.borderRadius};
-  ${spices.boxShadowLight};
+  ${spices.boxShadowLight()};
 `;
 
 export const StyledPageErrorHeader = styled.div`

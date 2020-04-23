@@ -11,8 +11,7 @@ const App = () => (
   <>
     <NormalizeStyles/>
     <BaseStyles/>
-    <Routes/>
-    {featureFlags.playground ? <Playground/> : null}
+    {featureFlags.playground ? <Playground/> : <Routes/>}
   </>
 );
 
