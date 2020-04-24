@@ -1,28 +1,63 @@
 @font-face {
   font-family: 'CircularStdBlack';
   src: url('./Fonts/CircularStd-Black.woff2') format('woff2'),
-    url('./Fonts/CircularStd-Black.woff') format('woff');
+       url('./Fonts/CircularStd-Black.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'CircularStdBold';
   src: url('./Fonts/CircularStd-Bold.woff2') format('woff2'),
-    url('./Fonts/CircularStd-Bold.woff') format('woff');
+       url('./Fonts/CircularStd-Bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'CircularStdMedium';
   src: url('./Fonts/CircularStd-Medium.woff2') format('woff2'),
-    url('./Fonts/CircularStd-Medium.woff') format('woff');
+       url('./Fonts/CircularStd-Medium.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'CircularStdBook';
   src: url('./Fonts/CircularStd-Book.woff2') format('woff2'),
-    url('./Fonts/CircularStd-Book.woff') format('woff');
+       url('./Fonts/CircularStd-Book.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./Fonts/MaterialIcons-Regular.eot');
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url('./Fonts/MaterialIcons-Regular.woff2') format('woff2'),
+       url('./Fonts/MaterialIcons-Regular.woff') format('woff'),
+       url('./Fonts/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+.material-icons.md-16 { font-size: 16px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-32 { font-size: 32px; }
+.material-icons.md-40 { font-size: 40px; }
