@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import PageError from '../Shared/Components/PageError/PageError';
+import PageError from '../Views/PageError/PageError';
 import Login from '../Views/Login/Login';
 
 const Routes = () => (

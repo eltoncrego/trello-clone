@@ -7,4 +7,5 @@ export default {
   title: 'Button',
 };
 
-export const StandardButton = () => <Button label={'hello'} onClickAction={action('clicked')}/>
+const testLabel = 'button label'
+export const StandardButton = () => <Button label={testLabel} onClickAction={action('clicked')}/>

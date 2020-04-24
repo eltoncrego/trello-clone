@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { componentStyles, color, spices, font } from './../../Utils/SharedStyles';
+import { componentStyles, color, spices, font } from '../../Shared/Utils/SharedStyles';
 
 export const StyledPageError = styled.div`
   width: 100%;
