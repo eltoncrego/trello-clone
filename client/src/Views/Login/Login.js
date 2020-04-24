@@ -10,15 +10,21 @@ import { useFormInput } from './../../Shared/Utils/Hooks';
 const Login = () => {
   const email = useFormInput('');
   const password = useFormInput('');
-  
+
+  function submitForm() {
+    console.log(email.value, password.value);
+  };
+
   const inputs = [
     {
       icon: 'person',
       inputProps: {
         placeholder: 'Email',
         type: 'email',
+        autoFocus: true,
         ...email
       },
+      onSubmit: submitForm,
     },
     {
       icon: 'lock',
@@ -26,13 +32,10 @@ const Login = () => {
         placeholder: 'Password',
         type: 'password',
         ...password
-      }
+      },
+      onSubmit: submitForm,
     }
   ];
-
-  const onClick = () => {
-    console.log(email.value, password.value);
-  };
 
   return(
     <StyledLoginContainer>
@@ -42,7 +45,7 @@ const Login = () => {
         </Link>
         <StyledLoginForm>
           {inputs.map((input, i) => <Input key={i} {...input}/>)}
-          <Button label={LOGIN.BUTTON_LABEL} onClickAction={onClick}/>
+          <Button label={LOGIN.BUTTON_LABEL} onClickAction={submitForm}/>
         </StyledLoginForm>
       </StyledLoginFormContainer>
       <StyledBrandingContainer>
