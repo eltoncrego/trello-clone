@@ -6,6 +6,7 @@ import Button from './../../Shared/Components/Button/Button';
 import { LOGIN } from '../../Shared/Constants/Messages';
 import { Link } from 'react-router-dom';
 import { useFormInput } from './../../Shared/Utils/Hooks';
+import { postNewUser } from '../../Shared/Utils/Services';
 
 const Login = () => {
   const [buttonStatus, setButtonStatus] = useState('');
@@ -41,7 +42,11 @@ const Login = () => {
 
   function submitForm() {
     setButtonStatus('loading');
-    console.log(email.value, password.value);
+    const newUser = {
+      email: email.value,
+      password: password.value
+    };
+    postNewUser(newUser).then(data => data.user ? console.log(data.user) : console.error(data.error));
   };
 
 
