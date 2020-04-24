@@ -7,7 +7,7 @@ export default {
   title: 'Input',
 };
 
-export const StandardInput = () => <Input onSubmit={action('submit')}/>
+export const StandardInput = () => <Input/>
 
 const placeholder = 'placeholder text'
 export const InputWithPlaceholderText = () => <Input onSubmit={action('submit')} inputProps={{placeholder}}/>;

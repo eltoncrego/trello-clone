@@ -5,7 +5,7 @@ import InputIcon from './InputIcon/InputIcon';
 const Input = ({ icon, inputProps, onSubmit }) => {
 
   const handleKeyPress = ({ key }) => {
-    if (key === 'Enter') {
+    if (key === 'Enter' && onSubmit) {
       onSubmit();
     }
   };
