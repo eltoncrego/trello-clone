@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import TrelloLogo from './TrelloLogo';
-import { color } from '../Utils/SharedStyles';
+import { color, spices } from '../Utils/SharedStyles';
 
 export const StyledIcon = styled.i`
   color: ${props => props.color};
@@ -8,7 +8,11 @@ export const StyledIcon = styled.i`
 
 export const StyledTrelloLogo = styled(TrelloLogo)`
   margin: ${props => props.margin ? props.margin : '0'};
-  &:hover {
+  & .trello-logo__fill {
+    ${spices.interactionTransition};
+    transition-property: fill;
+  }
+  &:hover .trello-logo__fill {
     fill: ${color.primaryHover};
   }
 `;

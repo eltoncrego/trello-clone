@@ -8,6 +8,7 @@ export const StyledInput = styled.input`
   border: none;
   background: none;
   outline: none;
+  ${spices.noSelect};
   &::placeholder {
     color: ${color.textLight};
   }

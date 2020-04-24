@@ -4,6 +4,7 @@ import { StyledIcon } from '../../StyledComponents';
 
 export const StyledInputIcon = styled(StyledIcon)`
   color: ${color.textLight};
+  ${spices.noSelect};
   ${spices.interactionTransition};
   transition-property: color;
 `;
