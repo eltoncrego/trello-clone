@@ -10,7 +10,7 @@ export const StyledButtonContainer = styled.div`
   ${spices.noSelect};
   ${spices.interactionTransition};
   ${spices.boxShadowMedium(color.glowPrimary)};
-  transition-property: background-color, box-shadow;
+  transition-property: background-color, box-shadow, color;
   &:hover {
     cursor: pointer;
     background-color: ${color.primaryHover};
@@ -19,6 +19,7 @@ export const StyledButtonContainer = styled.div`
   ${props => {
     if (props.status && props.status === 'loading') {
       return css`
+        color: ${color.textMedium};
         background-color: ${color.buttonLoading};
         box-shadow: none;
         &:hover {
