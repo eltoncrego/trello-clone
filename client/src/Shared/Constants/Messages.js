@@ -5,7 +5,7 @@ export const ERROR = {
 };
 
 export const LOGIN = {
-  SLOGAN: 'Plan Your Next Big Thing',
+  SLOGAN: 'Plan The Next Big Thing',
   SECONDARY_SLOGAN: 'With Trello, you have the power to bring your ideas to life.',
   INPUTS: [
     {
