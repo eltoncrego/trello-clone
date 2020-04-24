@@ -19,6 +19,7 @@ export default createGlobalStyle`
   #root {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
   }
 
   button,

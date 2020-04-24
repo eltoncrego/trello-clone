@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { componentStyles, color, spices, font } from './../../Utils/SharedStyles';
 
 export const StyledPageError = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
