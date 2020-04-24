@@ -4,8 +4,8 @@ var http = require('http');
 const PORT = process.env.PORT || 3001;
 const router = require('./router');
 
-const handler = express();
-const server = http.createServer(handler);
+const app = express();
+const server = http.createServer(app);
 
-handler.use(router);
+app.use(router);
 server.listen(PORT, () => console.log(`Trello clone server has started. Listening on port ${PORT}`));
