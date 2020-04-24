@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { componentStyles, color, spices } from '../../Utils/SharedStyles';
 
 export const StyledButtonContainer = styled.div`
+  display: inline-flex;
   padding: ${componentStyles.fieldPadding} ${componentStyles.fieldLargePadding};
   color: ${color.textOnColor};
   background-color: ${color.primary};
