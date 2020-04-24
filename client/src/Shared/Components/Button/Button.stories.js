@@ -8,4 +8,9 @@ export default {
 };
 
 const testLabel = 'button label'
-export const StandardButton = () => <Button label={testLabel} onClickAction={action('clicked')}/>
+const buttonProps = {
+  label: testLabel,
+  onClickAction: action('clicked'),
+}
+export const StandardButton = () => <Button {...buttonProps}/>;
+export const LoadingButton = () => <Button status={'loading'} {...buttonProps}/>;

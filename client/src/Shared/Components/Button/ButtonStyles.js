@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { componentStyles, color, spices } from '../../Utils/SharedStyles';
 
 export const StyledButtonContainer = styled.div`
@@ -16,4 +16,17 @@ export const StyledButtonContainer = styled.div`
     background-color: ${color.primaryHover};
     ${spices.boxShadowMedium(color.glowPrimaryHover)};
   }
+  ${props => {
+    if (props.status && props.status === 'loading') {
+      return css`
+        background-color: ${color.buttonLoading};
+        box-shadow: none;
+        &:hover {
+          cursor: initial;
+          background-color: ${color.buttonLoading};
+          box-shadow: none;
+        }
+      `;
+    }
+  }}
 `;
