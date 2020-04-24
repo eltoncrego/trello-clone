@@ -9,7 +9,6 @@ export const StyledInputIcon = styled(StyledIcon)`
 `;
 
 export const StyledInputIconContainer = styled.div`
-  flex: 1;
   border-right: 1px solid ${color.borderLightest};
   height: 50px;
   padding: 0 ${componentStyles.fieldMediumPadding};
