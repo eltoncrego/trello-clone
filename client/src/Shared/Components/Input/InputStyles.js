@@ -11,6 +11,7 @@ export const StyledInput = styled.input`
   ${spices.noSelect};
   &::placeholder {
     color: ${color.textLight};
+    text-transform: capitalize;
   }
 `;
 

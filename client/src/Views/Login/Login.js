@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyledLoginContainer, StyledBrandingContainer, StyledBrandingTitle, StyledBrandingDesc, StyledLoginFormContainer, StyledLoginForm } from './LoginStyles';
 import { StyledTrelloLogo } from '../../Shared/Components/StyledComponents';
 import Input from './../../Shared/Components/Input/Input';
@@ -8,17 +8,20 @@ import { Link } from 'react-router-dom';
 import { useFormInput } from './../../Shared/Utils/Hooks';
 
 const Login = () => {
+  const [buttonStatus, setButtonStatus] = useState('');
   const email = useFormInput('');
   const password = useFormInput('');
-  
+
   const inputs = [
     {
       icon: 'person',
       inputProps: {
         placeholder: 'Email',
         type: 'email',
+        autoFocus: true,
         ...email
       },
+      onSubmit: submitForm,
     },
     {
       icon: 'lock',
@@ -26,13 +29,21 @@ const Login = () => {
         placeholder: 'Password',
         type: 'password',
         ...password
-      }
+      },
+      onSubmit: submitForm,
     }
   ];
 
-  const onClick = () => {
+  let buttonProps = {
+    label: LOGIN.BUTTON_LABEL,
+    onClickAction: submitForm,
+  }
+
+  function submitForm() {
+    setButtonStatus('loading');
     console.log(email.value, password.value);
   };
+
 
   return(
     <StyledLoginContainer>
@@ -42,7 +53,7 @@ const Login = () => {
         </Link>
         <StyledLoginForm>
           {inputs.map((input, i) => <Input key={i} {...input}/>)}
-          <Button label={LOGIN.BUTTON_LABEL} onClickAction={onClick}/>
+          <Button {...buttonProps} status={buttonStatus}/>
         </StyledLoginForm>
       </StyledLoginFormContainer>
       <StyledBrandingContainer>

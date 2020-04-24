@@ -21,6 +21,7 @@ export const color = {
 
   glowPrimary: 'rgba(70, 128, 255, 0.3)',
   glowPrimaryHover: 'rgba(56, 102, 204, 0.3)',
+  buttonLoading: '#FED18D',
 };
 
 export const font = {

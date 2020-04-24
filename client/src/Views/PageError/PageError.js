@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyledPageError, StyledPageErrorCard, StyledPageErrorHeader, StyledErrorTitle} from './PageErrorStyles';
-import { StyledIcon } from '../StyledComponents';
-import { color } from '../../Utils/SharedStyles';
-import { ERROR } from '../../Constants/Messages';
+import { StyledIcon } from '../../Shared/Components/StyledComponents';
+import { color } from '../../Shared/Utils/SharedStyles';
+import { ERROR } from '../../Shared/Constants/Messages';
 
 const PageError = () => (
   <StyledPageError>

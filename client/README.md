@@ -20,3 +20,4 @@ The following list are some best practices that I've tried to follow with this p
 - Styled component files should be organized in the following order of precedence:
   1. Inner components to outer components. This allows for easier selection of components within the same file if a parent action should effect it's children's style ie hover effecting child colors.
   2. The rough order in-which components are *meant* to be displayed on the page.
+- Each shared component should have a `.stories.js` file associated with it in order to drive Component Driven Development.
