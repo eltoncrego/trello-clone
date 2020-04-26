@@ -21,7 +21,9 @@ export const color = {
 
   glowPrimary: 'rgba(70, 128, 255, 0.3)',
   glowPrimaryHover: 'rgba(56, 102, 204, 0.3)',
-  buttonLoading: '#FED18D',
+  loading: '#FA9500',
+  error: '#EF3E36',
+  success: '#8FC590'
 };
 
 export const font = {

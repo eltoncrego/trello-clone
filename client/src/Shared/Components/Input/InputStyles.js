@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { color, componentStyles, spices } from '../../Utils/SharedStyles';
+import styled, { css } from 'styled-components';
+import { color, componentStyles, spices, font } from '../../Utils/SharedStyles';
 import { StyledInputIcon, StyledInputIconContainer } from './InputIcon/InputIconStyles';
 
 export const StyledInput = styled.input`
@@ -14,6 +14,21 @@ export const StyledInput = styled.input`
     text-transform: capitalize;
   }
 `;
+
+const styleInputContainerForStatus = ({ status }) => {
+  const validStatuses = ['error'];
+  if (status && validStatuses.includes(status)) {
+    return css`
+      border-color: ${color[status]};
+      & ${StyledInputIconContainer} {
+        border-color: ${color[status]};
+      }
+      & ${StyledInputIcon} {
+        color: ${color[status]};
+      }
+    `;
+  }
+};
 
 export const StyledInputContainer = styled.div`
   border: 1px solid ${color.borderLightest};
@@ -32,4 +47,11 @@ export const StyledInputContainer = styled.div`
   &:focus-within  ${StyledInputIcon} {
     color: ${color.borderInputFocus};
   }
+  ${props => styleInputContainerForStatus(props)};
+`;
+
+export const StyledErrorDiv = styled.div`
+  color: ${color.error};
+  text-transform: uppercase;
+  ${font.size(10)}
 `;
