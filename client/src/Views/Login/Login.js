@@ -8,6 +8,37 @@ import { Link } from 'react-router-dom';
 import { useFormInput, useFormStatus } from './../../Shared/Utils/Hooks';
 import { postVerifyUser } from '../../Shared/Utils/Services';
 
+const inputs = [
+  {
+    icon: 'person',
+    ...emailStatus,
+    inputProps: {
+      placeholder: 'Email',
+      type: 'email',
+      autoFocus: true,
+      ...email
+    },
+    onSubmit: submitForm,
+  },
+  {
+    icon: 'lock',
+    ...passwordStatus,
+    status: passwordStatus.status,
+    errorText: passwordStatus.errorText,
+    inputProps: {
+      placeholder: 'Password',
+      type: 'password',
+      ...password
+    },
+    onSubmit: submitForm,
+  }
+];
+
+const buttonProps = {
+  label: LOGIN.BUTTON_LABEL,
+  onClickAction: submitForm,
+};
+
 const Login = () => {
   const [buttonStatus, setButtonStatus] = useState('');
   const email = useFormInput('');
@@ -15,40 +46,9 @@ const Login = () => {
   const emailStatus = useFormStatus('', '');
   const passwordStatus = useFormStatus('', '');
 
-  const inputs = [
-    {
-      icon: 'person',
-      ...emailStatus,
-      inputProps: {
-        placeholder: 'Email',
-        type: 'email',
-        autoFocus: true,
-        ...email
-      },
-      onSubmit: submitForm,
-    },
-    {
-      icon: 'lock',
-      ...passwordStatus,
-      status: passwordStatus.status,
-      errorText: passwordStatus.errorText,
-      inputProps: {
-        placeholder: 'Password',
-        type: 'password',
-        ...password
-      },
-      onSubmit: submitForm,
-    }
-  ];
-
   useEffect(() => {
     setButtonStatus('');
-  }, [email.value, password.value])
-
-  let buttonProps = {
-    label: LOGIN.BUTTON_LABEL,
-    onClickAction: submitForm,
-  }
+  }, [email.value, password.value]);
 
   function handleServerError({ error }) {
     if (error.code === 0) {
@@ -79,7 +79,6 @@ const Login = () => {
     };
     postVerifyUser(user).then(handleVerifyUserResponse);
   };
-
 
   return(
     <StyledLoginContainer>
