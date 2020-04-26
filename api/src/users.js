@@ -5,7 +5,12 @@ const addUser = ({ email, password }) => {
     return user.email === email;
   });
   if (existingUser) {
-    return ({ error: `ERROR: A user already exists with the email, ${email}.`});
+    return ({ 
+      error: {
+        code: 0,
+        text: `A user already exists with the email, ${email}.`,
+      }
+    });
   }
 
   const user = { email, password };
