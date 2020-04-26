@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { StyledLoginContainer, StyledBrandingContainer, StyledBrandingTitle, StyledBrandingDesc, StyledLoginFormContainer, StyledLoginForm } from './LoginStyles';
 import { StyledTrelloLogo } from '../../Shared/Components/StyledComponents';
 import Input from './../../Shared/Components/Input/Input';
@@ -7,13 +7,15 @@ import { LOGIN } from '../../Shared/Constants/Messages';
 import { Link } from 'react-router-dom';
 import { useFormInput, useFormStatus } from './../../Shared/Utils/Hooks';
 import { postVerifyUser } from '../../Shared/Utils/Services';
+import UserContext from '../../Shared/Utils/UserContext';
 
-const Login = () => {
+const Login = ({ history }) => {
   const [buttonStatus, setButtonStatus] = useState('');
   const email = useFormInput('');
   const password = useFormInput('');
   const emailStatus = useFormStatus('', '');
   const passwordStatus = useFormStatus('', '');
+  const userObject = useContext(UserContext);
 
   useEffect(() => {
     setButtonStatus('');
@@ -65,6 +67,8 @@ const Login = () => {
       setButtonStatus('success');
       emailStatus.updateStatus('', '');
       passwordStatus.updateStatus('', '');
+      userObject.currentUser = data.user;
+      history.push('/home');
     } else if (data.error) {
       setButtonStatus('error');
       handleServerError(data);
