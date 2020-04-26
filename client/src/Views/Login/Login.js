@@ -76,12 +76,23 @@ const Login = ({ history }) => {
   };
 
   function submitForm() {
-    setButtonStatus('loading');
-    const user = {
-      email: email.value,
-      password: password.value
-    };
-    postVerifyUser(user).then(handleVerifyUserResponse);
+    document.activeElement.blur();
+    if (email.value && password.value) {
+      setButtonStatus('loading');
+      const user = {
+        email: email.value,
+        password: password.value
+      };
+      postVerifyUser(user).then(handleVerifyUserResponse);
+    }
+    if (!email.value) {
+      emailStatus.updateStatus('error', 'Please enter your email');
+      setButtonStatus('error');
+    }
+    if (!password.value) {
+      passwordStatus.updateStatus('error', 'Please enter your password');
+      setButtonStatus('error');
+    }
   };
 
   return(
