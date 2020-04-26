@@ -6,12 +6,14 @@ import Button from './../../Shared/Components/Button/Button';
 import { LOGIN } from '../../Shared/Constants/Messages';
 import { Link } from 'react-router-dom';
 import { useFormInput } from './../../Shared/Utils/Hooks';
-import { postNewUser } from '../../Shared/Utils/Services';
+import { postVerifyUser } from '../../Shared/Utils/Services';
 
 const Login = () => {
   const [buttonStatus, setButtonStatus] = useState('');
   const [emailStatus, setEmailStatus] = useState('');
   const [emailErrorText, setEmailErrorText] = useState('');
+  const [passwordStatus, setPasswordStatus] = useState('');
+  const [passwordErrorText, setPasswordErrorText] = useState('');
   const email = useFormInput('');
   const password = useFormInput('');
 
@@ -30,6 +32,8 @@ const Login = () => {
     },
     {
       icon: 'lock',
+      status: passwordStatus,
+      errorText: passwordErrorText,
       inputProps: {
         placeholder: 'Password',
         type: 'password',
@@ -48,28 +52,39 @@ const Login = () => {
     onClickAction: submitForm,
   }
 
-  function handleNewUserResponse(data) {
+  function handleServerError({ error }) {
+    if (error.code === 0) {
+      setEmailStatus('error');
+      setEmailErrorText(error.text);
+    }
+    if (error.code === 1) {
+      setEmailStatus('error');
+      setPasswordStatus('error');
+      setEmailErrorText(error.text);
+      setPasswordErrorText(error.text);
+    }
+  }
+
+  function handleVerifyUserResponse(data) {
     if (data.user) {
       setButtonStatus('success');
-      setEmailStatus('=');
+      setEmailStatus('');
       setEmailErrorText('');
+      setPasswordStatus('');
+      setPasswordErrorText('');
     } else if (data.error) {
       setButtonStatus('error');
-      console.log(data.error);
-      if (data.error.code === 0) {
-        setEmailStatus('error');
-        setEmailErrorText(data.error.text);
-      }
+      handleServerError(data);
     }
   };
 
   function submitForm() {
     setButtonStatus('loading');
-    const newUser = {
+    const user = {
       email: email.value,
       password: password.value
     };
-    postNewUser(newUser).then(handleNewUserResponse);
+    postVerifyUser(user).then(handleVerifyUserResponse);
   };
 
 
