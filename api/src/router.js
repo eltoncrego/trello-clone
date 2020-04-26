@@ -14,4 +14,9 @@ router.post('/newuser', (req, resp) => {
   resp.send(response);
 });
 
+router.post('/verifyuser', (req, resp) => {
+  const response = users.verifyUser(req.body);
+  resp.send(response);
+});
+
 module.exports = router;
