@@ -26,3 +26,12 @@ const passwordIconProps = {
   }
 }
 export const PasswordInputWithIcon = () => <Input onSubmit={action('submit')} {...passwordIconProps}/>;
+
+const status = 'error';
+export const PasswordInputWithIconError = () => <Input onSubmit={action('submit')} {...passwordIconProps} status={status}/>;
+
+const error = {
+  status,
+  errorText: 'this is a test error label'
+};
+export const PasswordInputWithIconErrorAndText = () => <Input onSubmit={action('submit')} {...passwordIconProps} {...error}/>;

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { color, componentStyles, spices } from '../../Utils/SharedStyles';
+import styled, { css } from 'styled-components';
+import { color, componentStyles, spices, font } from '../../Utils/SharedStyles';
 import { StyledInputIcon, StyledInputIconContainer } from './InputIcon/InputIconStyles';
 
 export const StyledInput = styled.input`
@@ -32,4 +32,25 @@ export const StyledInputContainer = styled.div`
   &:focus-within  ${StyledInputIcon} {
     color: ${color.borderInputFocus};
   }
+  ${props => {
+    if (props.status) {
+      if (props.status === 'error') {
+        return css`
+          border-color: ${color.error};
+          & ${StyledInputIconContainer} {
+            border-color: ${color.error};
+          }
+          & ${StyledInputIcon} {
+            color: ${color.error};
+          }
+        `;
+      }
+    }
+  }}
+`;
+
+export const StyledErrorDiv = styled.div`
+  color: ${color.error};
+  text-transform: uppercase;
+  ${font.size(10)}
 `;
