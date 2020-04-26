@@ -8,37 +8,6 @@ import { Link } from 'react-router-dom';
 import { useFormInput, useFormStatus } from './../../Shared/Utils/Hooks';
 import { postVerifyUser } from '../../Shared/Utils/Services';
 
-const inputs = [
-  {
-    icon: 'person',
-    ...emailStatus,
-    inputProps: {
-      placeholder: 'Email',
-      type: 'email',
-      autoFocus: true,
-      ...email
-    },
-    onSubmit: submitForm,
-  },
-  {
-    icon: 'lock',
-    ...passwordStatus,
-    status: passwordStatus.status,
-    errorText: passwordStatus.errorText,
-    inputProps: {
-      placeholder: 'Password',
-      type: 'password',
-      ...password
-    },
-    onSubmit: submitForm,
-  }
-];
-
-const buttonProps = {
-  label: LOGIN.BUTTON_LABEL,
-  onClickAction: submitForm,
-};
-
 const Login = () => {
   const [buttonStatus, setButtonStatus] = useState('');
   const email = useFormInput('');
@@ -49,6 +18,37 @@ const Login = () => {
   useEffect(() => {
     setButtonStatus('');
   }, [email.value, password.value]);
+
+  const inputs = [
+    {
+      icon: 'person',
+      ...emailStatus,
+      inputProps: {
+        placeholder: 'Email',
+        type: 'email',
+        autoFocus: true,
+        ...email
+      },
+      onSubmit: submitForm,
+    },
+    {
+      icon: 'lock',
+      ...passwordStatus,
+      status: passwordStatus.status,
+      errorText: passwordStatus.errorText,
+      inputProps: {
+        placeholder: 'Password',
+        type: 'password',
+        ...password
+      },
+      onSubmit: submitForm,
+    }
+  ];
+  
+  const buttonProps = {
+    label: LOGIN.BUTTON_LABEL,
+    onClickAction: submitForm,
+  };
 
   function handleServerError({ error }) {
     if (error.code === 0) {
