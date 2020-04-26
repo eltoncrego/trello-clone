@@ -13,3 +13,23 @@ export const useFormInput = (defaultValue) => {
     onChange: handleChange
   }
 };
+
+export const useFormStatus = (statusDV, errorTextDV) => {
+  const [status, setStatus] = useState(statusDV);
+  const [errorText, setErrorText] = useState(errorTextDV);
+  useEffect(() => {
+    setStatus(statusDV);
+  }, [statusDV]);
+  useEffect(() => {
+    setErrorText(errorTextDV);
+  }, [errorTextDV]);
+  function updateStatus(status, errorText) {
+    setStatus(status);
+    setErrorText(errorText);
+  }
+  return {
+    status,
+    errorText,
+    updateStatus
+  }
+}

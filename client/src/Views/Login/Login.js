@@ -5,23 +5,20 @@ import Input from './../../Shared/Components/Input/Input';
 import Button from './../../Shared/Components/Button/Button';
 import { LOGIN } from '../../Shared/Constants/Messages';
 import { Link } from 'react-router-dom';
-import { useFormInput } from './../../Shared/Utils/Hooks';
+import { useFormInput, useFormStatus } from './../../Shared/Utils/Hooks';
 import { postVerifyUser } from '../../Shared/Utils/Services';
 
 const Login = () => {
   const [buttonStatus, setButtonStatus] = useState('');
-  const [emailStatus, setEmailStatus] = useState('');
-  const [emailErrorText, setEmailErrorText] = useState('');
-  const [passwordStatus, setPasswordStatus] = useState('');
-  const [passwordErrorText, setPasswordErrorText] = useState('');
   const email = useFormInput('');
   const password = useFormInput('');
+  const emailStatus = useFormStatus('', '');
+  const passwordStatus = useFormStatus('', '');
 
   const inputs = [
     {
       icon: 'person',
-      status: emailStatus,
-      errorText: emailErrorText,
+      ...emailStatus,
       inputProps: {
         placeholder: 'Email',
         type: 'email',
@@ -32,8 +29,9 @@ const Login = () => {
     },
     {
       icon: 'lock',
-      status: passwordStatus,
-      errorText: passwordErrorText,
+      ...passwordStatus,
+      status: passwordStatus.status,
+      errorText: passwordStatus.errorText,
       inputProps: {
         placeholder: 'Password',
         type: 'password',
@@ -54,24 +52,19 @@ const Login = () => {
 
   function handleServerError({ error }) {
     if (error.code === 0) {
-      setEmailStatus('error');
-      setEmailErrorText(error.text);
+      emailStatus.updateStatus('error', error.text);
     }
     if (error.code === 1) {
-      setEmailStatus('error');
-      setPasswordStatus('error');
-      setEmailErrorText(error.text);
-      setPasswordErrorText(error.text);
+      emailStatus.updateStatus('error', error.text);
+      passwordStatus.updateStatus('error', error.text);
     }
   }
 
   function handleVerifyUserResponse(data) {
     if (data.user) {
       setButtonStatus('success');
-      setEmailStatus('');
-      setEmailErrorText('');
-      setPasswordStatus('');
-      setPasswordErrorText('');
+      emailStatus.updateStatus('', '');
+      passwordStatus.updateStatus('', '');
     } else if (data.error) {
       setButtonStatus('error');
       handleServerError(data);
