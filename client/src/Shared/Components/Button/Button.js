@@ -3,7 +3,7 @@ import { StyledButtonContainer } from './ButtonStyles';
 
 const Button = ({ label, onClickAction, status }) => (
   <StyledButtonContainer onClick={onClickAction} status={status}>
-    {label}
+    {status === 'loading' ? 'loading' : label}
   </StyledButtonContainer>
 );
 

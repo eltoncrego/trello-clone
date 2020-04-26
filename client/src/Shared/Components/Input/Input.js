@@ -2,9 +2,10 @@ import React from 'react';
 import { StyledInput, StyledInputContainer, StyledErrorDiv } from './InputStyles';
 import InputIcon from './InputIcon/InputIcon';
 
-const Input = ({ icon, inputProps, onSubmit, status, errorText }) => {
+const Input = ({ icon, inputProps, onSubmit, status, errorText, updateStatus }) => {
 
   const handleKeyPress = ({ key }) => {
+    updateStatus('', '');
     if (key === 'Enter' && onSubmit) {
       onSubmit();
     }

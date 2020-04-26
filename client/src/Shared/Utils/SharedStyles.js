@@ -65,6 +65,16 @@ export const spices = {
     -ms-user-select: none;
     user-select: none;
   `,
+  slowAnimation: name => css`
+    animation-name: ${name};
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  `,
+  joltAnimation: name => css`
+    animation-name: ${name};
+    animation-duration: 250ms;
+    animation-iteration-count: 2;
+  `,
 };
 
 export const zIndexes = {

@@ -1,25 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { StyledLoginContainer, StyledBrandingContainer, StyledBrandingTitle, StyledBrandingDesc, StyledLoginFormContainer, StyledLoginForm } from './LoginStyles';
 import { StyledTrelloLogo } from '../../Shared/Components/StyledComponents';
 import Input from './../../Shared/Components/Input/Input';
 import Button from './../../Shared/Components/Button/Button';
 import { LOGIN } from '../../Shared/Constants/Messages';
 import { Link } from 'react-router-dom';
-import { useFormInput } from './../../Shared/Utils/Hooks';
-import { postNewUser } from '../../Shared/Utils/Services';
+import { useFormInput, useFormStatus } from './../../Shared/Utils/Hooks';
+import { postVerifyUser } from '../../Shared/Utils/Services';
+import UserContext from '../../Shared/Utils/UserContext';
 
-const Login = () => {
+const Login = ({ history }) => {
   const [buttonStatus, setButtonStatus] = useState('');
-  const [emailStatus, setEmailStatus] = useState('');
-  const [emailErrorText, setEmailErrorText] = useState('');
   const email = useFormInput('');
   const password = useFormInput('');
+  const emailStatus = useFormStatus('', '');
+  const passwordStatus = useFormStatus('', '');
+  const userObject = useContext(UserContext);
+
+  useEffect(() => {
+    setButtonStatus('');
+  }, [email.value, password.value]);
 
   const inputs = [
     {
       icon: 'person',
-      status: emailStatus,
-      errorText: emailErrorText,
+      ...emailStatus,
       inputProps: {
         placeholder: 'Email',
         type: 'email',
@@ -30,6 +35,9 @@ const Login = () => {
     },
     {
       icon: 'lock',
+      ...passwordStatus,
+      status: passwordStatus.status,
+      errorText: passwordStatus.errorText,
       inputProps: {
         placeholder: 'Password',
         type: 'password',
@@ -38,40 +46,54 @@ const Login = () => {
       onSubmit: submitForm,
     }
   ];
-
-  useEffect(() => {
-    setButtonStatus('');
-  }, [email.value, password.value])
-
-  let buttonProps = {
+  
+  const buttonProps = {
     label: LOGIN.BUTTON_LABEL,
     onClickAction: submitForm,
+  };
+
+  function handleServerError({ error }) {
+    if (error.code === 0) {
+      emailStatus.updateStatus('error', error.text);
+    }
+    if (error.code === 1) {
+      emailStatus.updateStatus('error', error.text);
+      passwordStatus.updateStatus('error', error.text);
+    }
   }
 
-  function handleNewUserResponse(data) {
+  function handleVerifyUserResponse(data) {
     if (data.user) {
       setButtonStatus('success');
-      setEmailStatus('=');
-      setEmailErrorText('');
+      emailStatus.updateStatus('', '');
+      passwordStatus.updateStatus('', '');
+      userObject.currentUser = data.user;
+      history.push('/home');
     } else if (data.error) {
       setButtonStatus('error');
-      console.log(data.error);
-      if (data.error.code === 0) {
-        setEmailStatus('error');
-        setEmailErrorText(data.error.text);
-      }
+      handleServerError(data);
     }
   };
 
   function submitForm() {
-    setButtonStatus('loading');
-    const newUser = {
-      email: email.value,
-      password: password.value
-    };
-    postNewUser(newUser).then(handleNewUserResponse);
+    document.activeElement.blur();
+    if (email.value && password.value) {
+      setButtonStatus('loading');
+      const user = {
+        email: email.value,
+        password: password.value
+      };
+      postVerifyUser(user).then(handleVerifyUserResponse);
+    }
+    if (!email.value) {
+      emailStatus.updateStatus('error', 'Please enter your email');
+      setButtonStatus('error');
+    }
+    if (!password.value) {
+      passwordStatus.updateStatus('error', 'Please enter your password');
+      setButtonStatus('error');
+    }
   };
-
 
   return(
     <StyledLoginContainer>
