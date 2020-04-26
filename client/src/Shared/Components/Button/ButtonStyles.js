@@ -15,7 +15,7 @@ const styleButtonContainerForStatus = ({ status }) => {
       }
     `;
   }
-}
+};
 
 export const StyledButtonContainer = styled.div`
   padding: ${componentStyles.fieldPadding} ${componentStyles.fieldLargePadding};
@@ -32,5 +32,5 @@ export const StyledButtonContainer = styled.div`
     background-color: ${color.primaryHover};
     ${spices.boxShadowMedium(color.glowPrimaryHover)};
   }
-  ${props => styleButtonContainerForStatus(props)}
+  ${props => styleButtonContainerForStatus(props)};
 `;

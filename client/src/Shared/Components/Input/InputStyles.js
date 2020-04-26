@@ -15,6 +15,21 @@ export const StyledInput = styled.input`
   }
 `;
 
+const styleInputContainerForStatus = ({ status }) => {
+  const validStatuses = ['error'];
+  if (status && validStatuses.includes(status)) {
+    return css`
+      border-color: ${color[status]};
+      & ${StyledInputIconContainer} {
+        border-color: ${color[status]};
+      }
+      & ${StyledInputIcon} {
+        color: ${color[status]};
+      }
+    `;
+  }
+};
+
 export const StyledInputContainer = styled.div`
   border: 1px solid ${color.borderLightest};
   background-color: ${color.backgroundLight};
@@ -32,21 +47,7 @@ export const StyledInputContainer = styled.div`
   &:focus-within  ${StyledInputIcon} {
     color: ${color.borderInputFocus};
   }
-  ${props => {
-    if (props.status) {
-      if (props.status === 'error') {
-        return css`
-          border-color: ${color.error};
-          & ${StyledInputIconContainer} {
-            border-color: ${color.error};
-          }
-          & ${StyledInputIcon} {
-            color: ${color.error};
-          }
-        `;
-      }
-    }
-  }}
+  ${props => styleInputContainerForStatus(props)};
 `;
 
 export const StyledErrorDiv = styled.div`

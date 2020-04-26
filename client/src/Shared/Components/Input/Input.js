@@ -2,7 +2,7 @@ import React from 'react';
 import { StyledInput, StyledInputContainer, StyledErrorDiv } from './InputStyles';
 import InputIcon from './InputIcon/InputIcon';
 
-const Input = ({ icon, inputProps, onSubmit, status, errorText, onFocusCallback }) => {
+const Input = ({ icon, inputProps, onSubmit, status, errorText }) => {
 
   const handleKeyPress = ({ key }) => {
     if (key === 'Enter' && onSubmit) {
@@ -15,7 +15,7 @@ const Input = ({ icon, inputProps, onSubmit, status, errorText, onFocusCallback 
       <StyledErrorDiv>{errorText}</StyledErrorDiv>
       <StyledInputContainer status={status}>
         {icon ? <InputIcon icon={icon}/> : null}
-        <StyledInput {...inputProps} onKeyPress={handleKeyPress} onFocus={onFocusCallback}/>
+        <StyledInput {...inputProps} onKeyPress={handleKeyPress}/>
       </StyledInputContainer>
     </>
   );
