@@ -1,6 +1,22 @@
 import styled, { css } from 'styled-components';
 import { componentStyles, color, spices } from '../../Utils/SharedStyles';
 
+const styleButtonContainerForStatus = ({ status }) => {
+  const validStatuses = ['loading', 'error', 'success'];
+  if (status && validStatuses.includes(status)) {
+    return css`
+      color: ${color.textOnColor};
+      background-color: ${color[status]};
+      box-shadow: none;
+      &:hover {
+        cursor: initial;
+        background-color: ${color[status]};
+        box-shadow: none;
+      }
+    `;
+  }
+}
+
 export const StyledButtonContainer = styled.div`
   padding: ${componentStyles.fieldPadding} ${componentStyles.fieldLargePadding};
   color: ${color.textOnColor};
@@ -16,44 +32,5 @@ export const StyledButtonContainer = styled.div`
     background-color: ${color.primaryHover};
     ${spices.boxShadowMedium(color.glowPrimaryHover)};
   }
-  ${props => {
-    if (props.status){
-      if (props.status === 'loading') {
-        return css`
-          color: ${color.textOnColor};
-          background-color: ${color.loading};
-          box-shadow: none;
-          &:hover {
-            cursor: initial;
-            background-color: ${color.loading};
-            box-shadow: none;
-          }
-        `;
-      }
-      if (props.status === 'error') {
-        return css`
-          color: ${color.textOnColor};
-          background-color: ${color.error};
-          box-shadow: none;
-          &:hover {
-            cursor: initial;
-            background-color: ${color.error};
-            box-shadow: none;
-          }
-        `;
-      }
-      if (props.status === 'success') {
-        return css`
-          color: ${color.textOnColor};
-          background-color: ${color.success};
-          box-shadow: none;
-          &:hover {
-            cursor: initial;
-            background-color: ${color.success};
-            box-shadow: none;
-          }
-        `;
-      }
-    }
-  }}
+  ${props => styleButtonContainerForStatus(props)}
 `;
