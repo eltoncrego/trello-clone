@@ -14,3 +14,5 @@ const buttonProps = {
 }
 export const StandardButton = () => <Button {...buttonProps}/>;
 export const LoadingButton = () => <Button status={'loading'} {...buttonProps}/>;
+export const ErrorButton = () => <Button status={'error'} {...buttonProps}/>;
+export const SuccessButton = () => <Button status={'success'} {...buttonProps}/>;
