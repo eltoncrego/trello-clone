@@ -1,5 +1,5 @@
 # Trello Clone
-This repo was created for me to practice building a larger React application. I've based it heavily on some pretty popular posts.
+This repo was created for me to practice building a larger React application. I've based it heavily on some pretty popular repositories.
 
 First off, I'd like to credit the architecture and organization to [Ivor Reic](https://github.com/oldboyxx)! His [Jira Clone Project](https://github.com/oldboyxx/jira_clone) is honestly inspiring to say the least and I strive to create projects that are as neat as that repo.
 
