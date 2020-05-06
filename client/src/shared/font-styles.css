@@ -7,3 +7,8 @@
   font-family: 'CircularBold';
   src: url(./../assets/fonts/CircularStd-Bold.woff);
 }
+
+:root {
+  --base-font: 'Circular';
+  --bold-font: 'CircularBold';
+}
