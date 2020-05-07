@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { font, color } from '../Shared/styles';
+import { font, color } from '../Shared/Utils/styles';
 
 export default createGlobalStyle`
   html, body, #trello-clone__root {

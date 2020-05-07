@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { global, color, globalProperties, font } from '../../styles';
+import { global, color, globalProperties, font } from '../../Utils/styles';
 
 export const ListContainer = styled.div`
   background-color: ${color.bgLight};
@@ -15,6 +15,7 @@ export const ListHeader = styled.div`
   display: grid;
   grid-template-columns: 1fr 56px;
   margin-top: 16px;
+  margin-bottom: 32px;
 `;
 
 export const ListTitleInput = styled.input`

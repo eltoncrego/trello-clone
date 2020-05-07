@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, global, globalProperties } from '../../styles';
+import { color, global, globalProperties } from '../../Utils/styles';
 
 export const CardContainer = styled.div`
   background-color: ${color.bgLight};
