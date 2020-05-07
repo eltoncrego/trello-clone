@@ -8,4 +8,3 @@ Secondly, I'd like to credit the overall design and feel of the project to [The 
 ## Packages
 1. [styled-components](https://styled-components.com/) - I've used this primarily so that I can get props into my CSS code. Styled components also utilizes SASS syntax which is nice for bundling styling and components into one neat little package.
 2. [react-router-dom](https://www.npmjs.com/package/react-router-dom) - I've used this for routing throughout the app. It's a pretty great framework for managing navigation and routing.
-3. [Storybook](https://storybook.js.org/) - I had originally built out a playground for me to run component dev in, but this is just so much better.

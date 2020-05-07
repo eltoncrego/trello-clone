@@ -1,17 +1,20 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { font } from './../shared/styles';
+import { font, color } from '../Shared/styles';
 
 export default createGlobalStyle`
   html, body, #trello-clone__root {
     height: 100%;
     min-height: 100%;
     min-width: 768px;
+    background-color: ${color.bg}
   }
   
   #trello-clone__root {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   button,
@@ -44,6 +47,7 @@ export default createGlobalStyle`
     line-height: 1.2;
     ${font.size(16)}
     ${font.regular}
+    color: ${color.text};
   }
 
   h1, h2, h3, h4, h5, h6, strong {

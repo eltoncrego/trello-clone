@@ -1,5 +1,9 @@
 import React from 'react';
+import List from '../Shared/Components/List';
 
-const Test = () => <h1>What's up this is a test component.</h1>
+const Test = () => (
+  <List title="Test card title">
+  </List>
+);
 
 export default Test;
