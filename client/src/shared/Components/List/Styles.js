@@ -10,7 +10,14 @@ export const ListContainer = styled.div`
 `;
 
 export const ListHeader = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  width: 400px;
+  height: 28px;
+  display: grid;
+  grid-template-columns: 1fr 56px;
+`;
+
+export const ListTitle = styled.h2`
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 `;

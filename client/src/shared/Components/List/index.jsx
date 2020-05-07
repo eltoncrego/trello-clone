@@ -1,16 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ListContainer } from './Styles';
+import { ListContainer, ListHeader, ListTitle } from './Styles';
+import { IconContainer } from '../Shared';
 
 const List = ({ title, children }) => {
-  return <ListContainer>
-    <h2>{title}</h2>
-    {children}
-    </ListContainer>;
+  return (
+    <ListContainer>
+      <ListHeader>
+        <ListTitle>{title}</ListTitle>
+        <IconContainer disabled={true}>
+          <i className='material-icons'>more_horiz</i>
+        </IconContainer>
+      </ListHeader>
+      {children}
+    </ListContainer>
+  );
 };
 
 List.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 
 export default List;
