@@ -2,25 +2,37 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ListContainer, ListHeader, ListTitleInput } from './Styles';
 import { IconContainer } from '../Shared';
+import Card from '../Card';
 
-const List = ({ placeholder, children }) => {
-  const [title, setTitle] = useState('');
+const List = ({ data }) => {
+  const { title, cards } = data;
+  const [listTitle, setListTitle] = useState(title);
+  const [childCards, setChildCards] = useState(cards);
+
+  const getCardUIElements = () =>
+    childCards.map((card, i) => {
+      return <Card data={card} key={i} />;
+    });
 
   return (
     <ListContainer>
       <ListHeader>
-        <ListTitleInput value={title} placeholder={placeholder} onChange={e => setTitle(e.target.value)}/>
+        <ListTitleInput
+          value={listTitle}
+          placeholder={'Give your list a name!'}
+          onChange={(e) => setListTitle(e.target.value)}
+        />
         <IconContainer disabled={true}>
           <i className='material-icons'>more_horiz</i>
         </IconContainer>
       </ListHeader>
-      {children}
+      {getCardUIElements()}
     </ListContainer>
   );
 };
 
 List.propTypes = {
-  placeholder: PropTypes.string.isRequired,
+  data: PropTypes.object.isRequired,
 };
 
 export default List;
