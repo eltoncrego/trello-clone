@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './shared/font-styles.css';
-
-const App = () => <div>Hello world!</div>;
+import App from 'App';
 
 ReactDOM.render(<App/>, document.getElementById('trello-clone__root'));
