@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { ListContainer, ListHeader, ListTitle } from './Styles';
+import { ListContainer, ListHeader, ListTitleInput } from './Styles';
 import { IconContainer } from '../Shared';
 
-const List = ({ title, children }) => {
+const List = ({ placeholder, children }) => {
+  const [title, setTitle] = useState('');
+
   return (
     <ListContainer>
       <ListHeader>
-        <ListTitle>{title}</ListTitle>
+        <ListTitleInput value={title} placeholder={placeholder} onChange={e => setTitle(e.target.value)}/>
         <IconContainer disabled={true}>
           <i className='material-icons'>more_horiz</i>
         </IconContainer>
@@ -18,7 +20,7 @@ const List = ({ title, children }) => {
 };
 
 List.propTypes = {
-  title: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
 };
 
 export default List;

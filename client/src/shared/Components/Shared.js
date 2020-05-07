@@ -5,5 +5,5 @@ export const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  ${({disabled}) => disabled ? `color: ${color.textDisabled}` : null}
+  ${({disabled}) => disabled ? `color: ${color.light}` : null}
 `;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { global, color, globalProperties } from '../../styles';
+import { global, color, globalProperties, font } from '../../styles';
 
 export const ListContainer = styled.div`
   background-color: ${color.bgLight};
@@ -14,10 +14,15 @@ export const ListHeader = styled.div`
   height: 28px;
   display: grid;
   grid-template-columns: 1fr 56px;
+  margin-top: 16px;
 `;
 
-export const ListTitle = styled.h2`
-  white-space: nowrap;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
+export const ListTitleInput = styled.input`
+  border: none;
+  ${font.bold}
+  ${font.size(24)}
+
+  &::placeholder {
+    opacity: 0.6;
+  }
 `;
