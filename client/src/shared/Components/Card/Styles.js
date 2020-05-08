@@ -15,7 +15,7 @@ export const CardContainer = styled.div`
   ${props =>
     props.isBeingDragged &&
     css`
-      transform: rotate(-1deg);
+      transform: rotate(4deg);
       ${global.boxShadowLift}
     `}
 `;
