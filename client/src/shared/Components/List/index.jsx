@@ -5,7 +5,6 @@ import { Droppable, Draggable } from 'react-beautiful-dnd';
 import {
   ListContainer,
   ListHeader,
-  ListTitleInput,
   DraggableListWrapper,
 } from './Styles';
 import { IconContainer } from '../Shared';
@@ -13,11 +12,6 @@ import Card from '../Card';
 
 const List = ({ data, id }) => {
   const { title, cards } = data;
-  const [listTitle, setListTitle] = useState(title);
-
-  useEffect(() => {
-    setListTitle(title);
-  }, [title]);
 
   const getCardUIElements = () =>
     cards.map((card, i) => {
@@ -40,11 +34,7 @@ const List = ({ data, id }) => {
                 }
               >
                 <ListHeader {...provided0.dragHandleProps}>
-                  <ListTitleInput
-                    value={listTitle}
-                    placeholder={'Give your list a name!'}
-                    onChange={(e) => setListTitle(e.target.value)}
-                  />
+                  <h2>{title}</h2>
                   <IconContainer disabled={true}>
                     <i className='material-icons'>more_horiz</i>
                   </IconContainer>

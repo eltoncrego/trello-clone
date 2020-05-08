@@ -21,13 +21,3 @@ export const ListHeader = styled.div`
   margin-top: 16px;
   margin-bottom: 32px;
 `;
-
-export const ListTitleInput = styled.input`
-  border: none;
-  ${font.bold}
-  ${font.size(24)}
-
-  &::placeholder {
-    opacity: 0.6;
-  }
-`;

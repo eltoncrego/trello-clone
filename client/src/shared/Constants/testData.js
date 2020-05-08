@@ -1,9 +1,3 @@
-export const testCards = [
-  'This is a sample card',
-  'This is another example',
-  'Maybe a third?',
-];
-
 export const testLists = [
   {
     title: 'Example List 1',
