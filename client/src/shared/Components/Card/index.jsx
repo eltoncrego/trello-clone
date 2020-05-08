@@ -1,8 +1,26 @@
 import React from 'react';
-import { CardContainer } from './Styles';
+import { Draggable } from 'react-beautiful-dnd';
 
-export const Card = ({ data }) => {
-  return <CardContainer>{data}</CardContainer>;
+import { CardContainer, DraggableWrapper } from './Styles';
+
+export const Card = ({ data, listId, id }) => {
+  return (
+    <Draggable draggableId={`list-${listId}__card-${id}`} index={id}>
+      {(provided, snapshot) => (
+        <DraggableWrapper
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+        >
+          <CardContainer
+            isBeingDragged={snapshot.isDragging && !snapshot.isDropAnimating}
+          >
+            {data}
+          </CardContainer>
+        </DraggableWrapper>
+      )}
+    </Draggable>
+  );
 };
 
 export default Card;

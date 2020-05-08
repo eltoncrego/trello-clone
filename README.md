@@ -8,3 +8,4 @@ Secondly, I'd like to credit the overall design and feel of the project to [The 
 ## Packages
 1. [styled-components](https://styled-components.com/) - I've used this primarily so that I can get props into my CSS code. Styled components also utilizes SASS syntax which is nice for bundling styling and components into one neat little package.
 2. [react-router-dom](https://www.npmjs.com/package/react-router-dom) - I've used this for routing throughout the app. It's a pretty great framework for managing navigation and routing.
+3. [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd) - This is Atlassians' official package for beautiful drag and drop elements.
