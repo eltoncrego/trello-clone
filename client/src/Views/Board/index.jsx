@@ -3,7 +3,7 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
 import List from '../../Shared/Components/List';
 import { testLists } from '../../Shared/Constants/testData';
-import { BoardContainer } from './Styles';
+import { BoardContainer, ListsContainer, BoardHeader } from './Styles';
 
 const Board = () => {
   const [lists, setLists] = useState(testLists);
@@ -49,18 +49,23 @@ const Board = () => {
   };
 
   return (
-    <DragDropContext onDragEnd={handleDragEnd}>
-      <Droppable droppableId='board' type='LIST' direction='horizontal'>
-        {(provided) => (
-          <BoardContainer ref={provided.innerRef}>
-            {lists.map((list, i) => (
-              <List data={list} id={i} key={i} />
-            ))}
-            {provided.placeholder}
-          </BoardContainer>
-        )}
-      </Droppable>
-    </DragDropContext>
+    <BoardContainer>
+      <BoardHeader>
+        <h1>Board Name</h1>
+      </BoardHeader>
+      <DragDropContext onDragEnd={handleDragEnd}>
+        <Droppable droppableId='board' type='LIST' direction='horizontal'>
+          {(provided) => (
+            <ListsContainer ref={provided.innerRef}>
+              {lists.map((list, i) => (
+                <List data={list} id={i} key={i} />
+              ))}
+              {provided.placeholder}
+            </ListsContainer>
+          )}
+        </Droppable>
+      </DragDropContext>
+    </BoardContainer>
   );
 };
 
