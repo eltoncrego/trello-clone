@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 import { global, color, globalProperties, font } from '../../Utils/styles';
 
+export const DraggableListWrapper = styled.div`
+  margin: ${globalProperties.itemSpacing};
+`;
+
 export const ListContainer = styled.div`
   background-color: ${color.bgLight};
-  margin: ${globalProperties.itemSpacing};
   padding: ${globalProperties.itemSpacing};
   ${global.borderRadius}
   ${global.boxShadow}
+  ${props => global.draggable(props)}
 `;
 
 export const ListHeader = styled.div`
