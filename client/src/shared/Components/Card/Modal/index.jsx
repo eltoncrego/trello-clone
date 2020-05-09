@@ -25,10 +25,13 @@ const Modal = ({ data, list, onClose, onSubmit }) => {
           <CardHeader width='50vw' hasSubtitle={true}>
             <ItemTitleSubtitleContainer>
               <EditItemTitle
+                title={`"${title}" Click to edit.`}
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 onBlur={() => onSubmit && onSubmit(title)}
-                onKeyDown={(e) => e.key === 'Enter' ? onSubmit && onSubmit(title) : null}
+                onKeyDown={(e) =>
+                  e.key === 'Enter' ? onSubmit && onSubmit(title) : null
+                }
               />
               <ItemSubtitle>Card in {list}</ItemSubtitle>
             </ItemTitleSubtitleContainer>
