@@ -4,7 +4,7 @@ import { Draggable } from 'react-beautiful-dnd';
 import { CardContainer, DraggableWrapper } from './Styles';
 import Modal from './Modal';
 
-export const Card = ({ data, listId, id }) => {
+export const Card = ({ data, list, listId, id }) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -26,7 +26,7 @@ export const Card = ({ data, listId, id }) => {
         )}
       </Draggable>
       {modalVisible && (
-        <Modal data={data} onClose={() => setModalVisible(false)} />
+        <Modal data={data} list={list} onClose={() => setModalVisible(false)} />
       )}
     </Fragment>
   );
