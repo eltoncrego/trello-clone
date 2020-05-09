@@ -10,11 +10,12 @@ export const global = {
   borderRadius: 'border-radius: 4px;',
   boxShadow: 'box-shadow: 0 2px 4px 0 rgba(14, 25, 51, 0.1);',
   boxShadowLift: 'box-shadow: 0 5px 10px 0 rgba(14, 25, 51, 0.1);',
-  draggable: (props) => css`
+  draggable: (props, weight) => css`
     transition: all 200ms cubic-bezier(0.2, 0, 0, 1);
-    transition-property: box-shadow;
+    transition-property: transform, box-shadow;
     ${props.isBeingDragged &&
     css`
+      transform: ${weight > 0 ? 'rotate(2deg)' : 'rotate(4deg)'};
       box-shadow: 0 5px 10px 0 rgba(14, 25, 51, 0.1);
     `}
   `,

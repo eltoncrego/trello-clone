@@ -10,7 +10,7 @@ export const ListContainer = styled.div`
   padding: ${globalProperties.itemSpacing};
   ${global.borderRadius}
   ${global.boxShadow}
-  ${props => global.draggable(props)}
+  ${props => global.draggable(props, 1)}
 `;
 
 export const ListHeader = styled.div`
