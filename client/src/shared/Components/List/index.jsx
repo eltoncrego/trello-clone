@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 
-import { ListContainer } from './Styles';
+import { ListContainer, ListCardsContainer } from './Styles';
 import { HeaderIconContainer, ItemTitle, CardHeader } from '../SharedStyled';
 import Card from '../Card';
 
@@ -10,24 +10,13 @@ const List = ({ data, id }) => {
   const { title, cards } = data;
   const getCardUIElements = () =>
     cards.map((card, i) => {
-      return (
-        <Card
-          data={card}
-          list={title}
-          listId={id}
-          id={i}
-          key={i}
-        />
-      );
+      return <Card data={card} list={title} listId={id} id={i} key={i} />;
     });
 
   return (
     <Draggable draggableId={`list-${id}`} index={id}>
       {(provided0, snapshot) => (
-        <div
-          ref={provided0.innerRef}
-          {...provided0.draggableProps}
-        >
+        <div ref={provided0.innerRef} {...provided0.draggableProps}>
           <Droppable droppableId={`list-${id}`} type='CARD'>
             {(provided) => (
               <ListContainer
@@ -42,8 +31,10 @@ const List = ({ data, id }) => {
                     <i className='material-icons'>more_horiz</i>
                   </HeaderIconContainer>
                 </CardHeader>
-                {getCardUIElements()}
-                {provided.placeholder}
+                <ListCardsContainer>
+                  {getCardUIElements()}
+                  {provided.placeholder}
+                </ListCardsContainer>
               </ListContainer>
             )}
           </Droppable>

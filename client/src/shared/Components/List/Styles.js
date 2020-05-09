@@ -10,3 +10,8 @@ export const ListContainer = styled.div`
   ${global.boxShadow}
   ${(props) => global.draggable(props, 8)}
 `;
+
+export const ListCardsContainer = styled.div`
+  max-height: calc(100vh - 278px);
+  overflow-y: scroll;
+`;
