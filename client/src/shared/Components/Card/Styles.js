@@ -11,4 +11,5 @@ export const CardContainer = styled.div`
   padding: ${globalProperties.itemSpacing};
   ${global.borderRadius}
   ${props => global.draggable(props)}
+  ${global.noSelect}
 `;

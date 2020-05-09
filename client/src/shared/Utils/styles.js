@@ -14,9 +14,17 @@ export const global = {
     transition: all 200ms cubic-bezier(0.2, 0, 0, 1);
     transition-property: box-shadow;
     ${props.isBeingDragged &&
-      css`
-        box-shadow: 0 5px 10px 0 rgba(14, 25, 51, 0.1);
-      `}
+    css`
+      box-shadow: 0 5px 10px 0 rgba(14, 25, 51, 0.1);
+    `}
+  `,
+  noSelect: css`
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   `,
 };
 

@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 
 import {
   ListContainer,
   ListHeader,
+  ListTitle,
   DraggableListWrapper,
 } from './Styles';
 import { IconContainer } from '../Shared';
@@ -34,7 +35,7 @@ const List = ({ data, id }) => {
                 }
               >
                 <ListHeader {...provided0.dragHandleProps}>
-                  <h2>{title}</h2>
+                  <ListTitle title={title}>{title}</ListTitle>
                   <IconContainer disabled={true}>
                     <i className='material-icons'>more_horiz</i>
                   </IconContainer>

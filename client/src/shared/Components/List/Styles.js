@@ -14,10 +14,17 @@ export const ListContainer = styled.div`
 `;
 
 export const ListHeader = styled.div`
-  width: 400px;
+  width: 256px;
   height: 28px;
   display: grid;
-  grid-template-columns: 1fr 56px;
+  grid-template-columns: 200px 56px;
   margin-top: 16px;
   margin-bottom: 32px;
+`;
+
+export const ListTitle = styled.h2`
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  ${global.noSelect}
 `;
