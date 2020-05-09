@@ -50,5 +50,6 @@ export const color = {
   bg: '#F6F7FB',
   bgLight: '#FFFFFF',
   text: '#313445',
+  secondaryText: '#83858F',
   light: '#E8E8E8',
 };

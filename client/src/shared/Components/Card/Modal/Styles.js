@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { global, color, globalProperties, zIndexes } from '../../Utils/styles';
+import { global, color, globalProperties, zIndexes } from '../../../Utils/styles';
 
 export const Overlay = styled.div`
   position: absolute;

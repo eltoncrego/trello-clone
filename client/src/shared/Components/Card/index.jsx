@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 
 import { CardContainer, DraggableWrapper } from './Styles';
-import Modal from '../Modal';
+import Modal from './Modal';
 
 export const Card = ({ data, listId, id }) => {
   const [modalVisible, setModalVisible] = useState(false);

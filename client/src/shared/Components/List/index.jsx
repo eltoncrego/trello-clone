@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 
-import {
-  ListContainer,
-  DraggableListWrapper,
-} from './Styles';
-import { IconContainer, CardTitle, CardHeader } from '../SharedStyled';
+import { ListContainer, DraggableListWrapper } from './Styles';
+import { HeaderIconContainer, ItemTitle, CardHeader } from '../SharedStyled';
 import Card from '../Card';
 
 const List = ({ data, id }) => {
   const { title, cards } = data;
-
   const getCardUIElements = () =>
     cards.map((card, i) => {
-      return <Card data={card} listId={id} id={i} key={i} />;
+      return (
+        <Card
+          data={card}
+          list={title}
+          listId={id}
+          id={i}
+          key={i}
+        />
+      );
     });
 
   return (
@@ -32,11 +36,11 @@ const List = ({ data, id }) => {
                   snapshot.isDragging && !snapshot.isDropAnimating
                 }
               >
-                <CardHeader {...provided0.dragHandleProps} width="272px">
-                  <CardTitle title={title}>{title}</CardTitle>
-                  <IconContainer disabled={true}>
+                <CardHeader {...provided0.dragHandleProps} width='272px'>
+                  <ItemTitle title={title}>{title}</ItemTitle>
+                  <HeaderIconContainer disabled={true}>
                     <i className='material-icons'>more_horiz</i>
-                  </IconContainer>
+                  </HeaderIconContainer>
                 </CardHeader>
                 {getCardUIElements()}
                 {provided.placeholder}
