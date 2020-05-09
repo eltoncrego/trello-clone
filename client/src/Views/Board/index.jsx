@@ -3,7 +3,13 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
 import List from '../../Shared/Components/List';
 import { testLists } from '../../Shared/Constants/testData';
-import { BoardContainer, ListsContainer, BoardHeader } from './Styles';
+import {
+  BoardContainer,
+  ListsContainer,
+  BoardHeader,
+  BoardIconContainer,
+  BoardSubTitle
+} from './Styles';
 
 const Board = () => {
   const [lists, setLists] = useState(testLists);
@@ -51,7 +57,13 @@ const Board = () => {
   return (
     <BoardContainer>
       <BoardHeader>
-        <h1>Board Name</h1>
+        <BoardIconContainer>
+          <i className='material-icons'>star</i>
+        </BoardIconContainer>
+        <div>
+          <h1>Board Name</h1>
+          <BoardSubTitle>Team Name</BoardSubTitle>
+        </div>
       </BoardHeader>
       <DragDropContext onDragEnd={handleDragEnd}>
         <Droppable droppableId='board' type='LIST' direction='horizontal'>

@@ -12,10 +12,16 @@ export const zIndexes = {
   upper: 2,
 };
 
+export const globalProperties = {
+  itemSpacing: '16px',
+  boxShadowSpread: '0 2px 4px 0',
+  boxShadowLiftSpread: '0 5px 10px 0'
+};
+
 export const global = {
   borderRadius: 'border-radius: 4px;',
-  boxShadow: 'box-shadow: 0 2px 4px 0 rgba(14, 25, 51, 0.1);',
-  boxShadowLift: 'box-shadow: 0 5px 10px 0 rgba(14, 25, 51, 0.1);',
+  boxShadow: `box-shadow: ${globalProperties.boxShadowSpread} rgba(14, 25, 51, 0.1);`,
+  boxShadowLift: `box-shadow: ${globalProperties.boxShadowLiftSpread} rgba(14, 25, 51, 0.1);`,
   transition: (props) => css`
     transition: all 200ms cubic-bezier(0.2, 0, 0, 1);
     transition: ${props};
@@ -26,7 +32,7 @@ export const global = {
     ${props.isBeingDragged &&
     css`
       transform: ${weight > 0 ? 'rotate(2deg)' : 'rotate(4deg)'};
-      box-shadow: 0 5px 10px 0 rgba(14, 25, 51, 0.1);
+      box-shadow: ${globalProperties.boxShadowLiftSpread} rgba(14, 25, 51, 0.1);
     `}
   `,
   noSelect: css`
@@ -42,14 +48,12 @@ export const global = {
   `,
 };
 
-export const globalProperties = {
-  itemSpacing: '16px',
-};
-
 export const color = {
+  primary: '#4680FF',
   bg: '#F6F7FB',
   bgLight: '#FFFFFF',
   text: '#313445',
   secondaryText: '#83858F',
+  textOnColor: '#FFFFFF',
   light: '#E8E8E8',
 };
