@@ -4,11 +4,9 @@ import { Droppable, Draggable } from 'react-beautiful-dnd';
 
 import {
   ListContainer,
-  ListHeader,
-  ListTitle,
   DraggableListWrapper,
 } from './Styles';
-import { IconContainer } from '../Shared';
+import { IconContainer, CardTitle, CardHeader } from '../SharedStyled';
 import Card from '../Card';
 
 const List = ({ data, id }) => {
@@ -34,12 +32,12 @@ const List = ({ data, id }) => {
                   snapshot.isDragging && !snapshot.isDropAnimating
                 }
               >
-                <ListHeader {...provided0.dragHandleProps}>
-                  <ListTitle title={title}>{title}</ListTitle>
+                <CardHeader {...provided0.dragHandleProps} width="272px">
+                  <CardTitle title={title}>{title}</CardTitle>
                   <IconContainer disabled={true}>
                     <i className='material-icons'>more_horiz</i>
                   </IconContainer>
-                </ListHeader>
+                </CardHeader>
                 {getCardUIElements()}
                 {provided.placeholder}
               </ListContainer>

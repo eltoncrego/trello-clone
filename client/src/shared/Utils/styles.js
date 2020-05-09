@@ -6,6 +6,12 @@ export const font = {
   size: (size) => `font-size: ${size}px;`,
 };
 
+export const zIndexes = {
+  lower: 0,
+  mid: 1,
+  upper: 2,
+}
+
 export const global = {
   borderRadius: 'border-radius: 4px;',
   boxShadow: 'box-shadow: 0 2px 4px 0 rgba(14, 25, 51, 0.1);',
@@ -26,6 +32,9 @@ export const global = {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+  `,
+  bgOverlay: css`
+    background-color: rgba(49, 52, 69, 0.6);
   `,
 };
 

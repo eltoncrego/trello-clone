@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { globalProperties } from '../../Shared/Utils/styles';
 
 export const BoardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
   padding: ${globalProperties.itemSpacing};
 `;
 
