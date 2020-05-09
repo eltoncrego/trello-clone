@@ -10,5 +10,5 @@ export const ListContainer = styled.div`
   padding: ${globalProperties.itemSpacing};
   ${global.borderRadius}
   ${global.boxShadow}
-  ${props => global.draggable(props, 1)}
+  ${props => global.draggable(props, 8)}
 `;

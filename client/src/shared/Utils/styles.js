@@ -15,7 +15,7 @@ export const zIndexes = {
 export const globalProperties = {
   itemSpacing: '16px',
   boxShadowSpread: '0 2px 4px 0',
-  boxShadowLiftSpread: '0 5px 10px 0'
+  boxShadowLiftSpread: '0 5px 10px 0',
 };
 
 export const global = {
@@ -31,7 +31,7 @@ export const global = {
     transition-property: transform, box-shadow;
     ${props.isBeingDragged &&
     css`
-      transform: ${weight > 0 ? 'rotate(2deg)' : 'rotate(4deg)'};
+      transform: rotate(${12/weight}deg);
       box-shadow: ${globalProperties.boxShadowLiftSpread} rgba(14, 25, 51, 0.1);
     `}
   `,
