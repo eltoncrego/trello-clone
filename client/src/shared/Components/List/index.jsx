@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 
-import { ListContainer, DraggableListWrapper } from './Styles';
+import { ListContainer } from './Styles';
 import { HeaderIconContainer, ItemTitle, CardHeader } from '../SharedStyled';
 import Card from '../Card';
 
@@ -24,7 +24,7 @@ const List = ({ data, id }) => {
   return (
     <Draggable draggableId={`list-${id}`} index={id}>
       {(provided0, snapshot) => (
-        <DraggableListWrapper
+        <div
           ref={provided0.innerRef}
           {...provided0.draggableProps}
         >
@@ -47,7 +47,7 @@ const List = ({ data, id }) => {
               </ListContainer>
             )}
           </Droppable>
-        </DraggableListWrapper>
+        </div>
       )}
     </Draggable>
   );

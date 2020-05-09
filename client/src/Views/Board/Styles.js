@@ -1,13 +1,24 @@
 import styled from 'styled-components';
-import { globalProperties, color, global, font } from '../../Shared/Utils/styles';
+import {
+  globalProperties,
+  color,
+  global,
+  font,
+} from '../../Shared/Utils/styles';
 
 export const BoardContainer = styled.div`
-  padding: ${globalProperties.itemSpacing};
+  flex: 1;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const ListsContainer = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: row;
+  overflow-x: scroll;
+  padding: ${globalProperties.itemSpacing};
 `;
 
 export const BoardIconContainer = styled.div`
@@ -16,9 +27,9 @@ export const BoardIconContainer = styled.div`
   justify-content: center;
   box-shadow: ${globalProperties.boxShadowSpread} rgba(70, 128, 255, 0.1);
   padding: ${globalProperties.itemSpacing};
+  margin: ${globalProperties.itemSpacing};
   background-color: ${color.primary};
   color: ${color.textOnColor};
-  margin: ${globalProperties.itemSpacing};
   ${global.borderRadius}
   &:hover {
     box-shadow: ${globalProperties.boxShadowLiftSpread} rgba(70, 128, 255, 0.1);
@@ -28,6 +39,7 @@ export const BoardIconContainer = styled.div`
 export const BoardHeader = styled.div`
   display: flex;
   align-items: center;
+  margin: ${globalProperties.itemSpacing};
 `;
 
 export const BoardSubTitle = styled.h2`
