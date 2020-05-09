@@ -1,0 +1,23 @@
+{
+  "name": "trello-clone-service",
+  "version": "1.0.0",
+  "description": "A Trello clone I'm working on to practice GraphQL in a scalable project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eltoncrego/trello-clone.git"
+  },
+  "author": "Elton Christopher Rego",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eltoncrego/trello-clone/issues"
+  },
+  "homepage": "https://github.com/eltoncrego/trello-clone#readme",
+  "dependencies": {
+    "apollo-server": "^2.13.0",
+    "graphql": "^15.0.0"
+  }
+}
