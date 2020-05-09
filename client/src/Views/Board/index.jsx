@@ -3,7 +3,11 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 
 import List from '../../Shared/Components/List';
-import { GET_ALL_LIST_DATA, REPLACE_ALL_LISTS } from '../../Shared/Utils/api';
+import {
+  GET_ALL_LIST_DATA,
+  REPLACE_ALL_LISTS,
+  REPLACE_CARDS_IN_LIST,
+} from '../../Shared/Utils/api';
 import {
   BoardContainer,
   ListsContainer,
@@ -15,7 +19,8 @@ import {
 const Board = () => {
   const [lists, setLists] = useState([]);
   const { loading, error, data } = useQuery(GET_ALL_LIST_DATA);
-  const [replaceAllLists, res] = useMutation(REPLACE_ALL_LISTS);
+  const [replaceAllLists, resAllLists] = useMutation(REPLACE_ALL_LISTS);
+  const [replaceCardsInList, resCards] = useMutation(REPLACE_CARDS_IN_LIST);
 
   useEffect(() => {
     setLists((data && data.lists) || []);
@@ -41,7 +46,18 @@ const Board = () => {
       const item = tempLists[sourceList].cards.splice(source.index, 1)[0];
       tempLists[destinationList].cards.splice(destination.index, 0, item);
       setLists(tempLists);
-      replaceAllLists({ variables: { lists: tempLists } });
+      const args = {
+        variables: {
+          listIndex: sourceList,
+          cards: tempLists[sourceList].cards,
+        },
+      };
+      replaceCardsInList(args);
+      args.variables = {
+        listIndex: destinationList,
+        cards: tempLists[destinationList].cards,
+      };
+      replaceCardsInList(args);
     }
   };
 

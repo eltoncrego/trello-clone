@@ -28,3 +28,11 @@ export const REPLACE_ALL_LISTS = gql`
     }
   }
 `;
+
+export const REPLACE_CARDS_IN_LIST = gql`
+  mutation ReplaceCardsInList($listIndex: Int!, $cards: [InputCard]!) {
+    replaceCardsInList(listIndex: $listIndex, cards: $cards) {
+      title,
+    }
+  }
+`;

@@ -18,6 +18,7 @@ const typeDefs = gql`
 
   type Mutation {
     replaceLists(lists: [InputList]!): [List]
+    replaceCardsInList(listIndex: Int!, cards: [InputCard]!): [Card]
   }
 
   input InputList {
@@ -36,7 +37,8 @@ const resolvers = {
     lists: () => lists,
   },
   Mutation: {
-    replaceLists: (parent, args, context, info) => lists = args.lists
+    replaceLists: (parent, args, context, info) => lists = args.lists,
+    replaceCardsInList: (parent, args, context, info) => lists[args.listIndex].cards = args.cards,
   }
 };
 
