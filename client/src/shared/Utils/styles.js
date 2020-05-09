@@ -26,12 +26,12 @@ export const global = {
     transition: all 200ms cubic-bezier(0.2, 0, 0, 1);
     transition: ${props};
   `,
-  draggable: (props, weight) => css`
+  draggable: (props) => css`
     transition: all 200ms cubic-bezier(0.2, 0, 0, 1);
     transition-property: transform, box-shadow;
     ${props.isBeingDragged &&
     css`
-      transform: rotate(${12/weight}deg);
+      transform: rotate(${16 / props.weight}deg);
       box-shadow: ${globalProperties.boxShadowLiftSpread} rgba(14, 25, 51, 0.1);
     `}
   `,

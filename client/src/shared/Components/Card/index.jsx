@@ -19,6 +19,7 @@ export const Card = ({ data, list, listId, id }) => {
             <CardContainer
               isBeingDragged={snapshot.isDragging && !snapshot.isDropAnimating}
               onClick={() => setModalVisible(true)}
+              weight={4}
             >
               {data.title}
             </CardContainer>

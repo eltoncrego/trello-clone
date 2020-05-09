@@ -10,7 +10,7 @@ export const CardContainer = styled.div`
   border: 1px solid ${color.light};
   padding: ${globalProperties.itemSpacing};
   ${global.borderRadius}
-  ${props => global.draggable(props, 4)}
+  ${props => global.draggable(props)}
   ${global.noSelect}
   ${global.transition('background-color')}
   &:hover {

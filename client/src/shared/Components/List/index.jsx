@@ -24,6 +24,7 @@ const List = ({ data, id }) => {
                 isBeingDragged={
                   snapshot.isDragging && !snapshot.isDropAnimating
                 }
+                weight={4 + cards.length * 4}
               >
                 <CardHeader {...provided0.dragHandleProps} width='272px'>
                   <ItemTitle title={title}>{title}</ItemTitle>
