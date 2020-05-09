@@ -4,6 +4,7 @@
   "description": "A Trello clone I'm working on to practice GraphQL in a scalable project.",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,8 @@
   "dependencies": {
     "apollo-server": "^2.13.0",
     "graphql": "^15.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   }
 }
