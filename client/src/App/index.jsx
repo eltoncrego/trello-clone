@@ -1,5 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { ApolloProvider } from '@apollo/react-hooks';
 
+import { client } from '../Shared/Utils/api';
 import BaseStyles from './BaseStyles';
 import NormalizeStyles from './NormalizeStyles';
 import Routes from './Routes';
@@ -7,11 +9,11 @@ import Routes from './Routes';
 import './fontStyles.css';
 
 const App = () => (
-  <Fragment>
+  <ApolloProvider client={client}>
     <NormalizeStyles />
     <BaseStyles />
     <Routes />
-  </Fragment>
+  </ApolloProvider>
 );
 
 export default App;

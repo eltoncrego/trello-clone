@@ -1,18 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import { useQuery } from '@apollo/react-hooks';
 
 import List from '../../Shared/Components/List';
-import { testLists } from '../../Shared/Constants/testData';
+import { GET_ALL_LIST_DATA } from '../../Shared/Utils/api';
 import {
   BoardContainer,
   ListsContainer,
   BoardHeader,
   BoardIconContainer,
-  BoardSubTitle
+  BoardSubTitle,
 } from './Styles';
 
 const Board = () => {
-  const [lists, setLists] = useState(testLists);
+  const [lists, setLists] = useState([]);
+  const { loading, error, data } = useQuery(GET_ALL_LIST_DATA);
+
+  useEffect(() => {
+    setLists((data && data.lists) || []);
+  }, [data]);
+
+  useEffect(() => {
+    error && console.error(error);
+  }, [error]);
 
   const getIndexFromDroppableId = (id) => parseInt(id.split('-')[1]);
 
@@ -69,9 +79,8 @@ const Board = () => {
         <Droppable droppableId='board' type='LIST' direction='horizontal'>
           {(provided) => (
             <ListsContainer ref={provided.innerRef}>
-              {lists.map((list, i) => (
-                <List data={list} id={i} key={i} />
-              ))}
+              {!loading &&
+                lists.map((list, i) => <List data={list} id={i} key={i} />)}
               {provided.placeholder}
             </ListsContainer>
           )}
