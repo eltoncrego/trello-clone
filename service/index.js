@@ -1,25 +1,42 @@
 const { ApolloServer, gql } = require('apollo-server');
-const { lists } = require('./data/testData');
+let { lists } = require('./data/testData');
 
 const typeDefs = gql`
   type List {
     title: String
     cards: [Card]
   }
-  
+
   type Card {
     title: String
     description: String
   }
-  
+
   type Query {
     lists: [List]
+  }
+
+  type Mutation {
+    replaceLists(lists: [InputList]!): [List]
+  }
+
+  input InputList {
+    title: String
+    cards: [InputCard]!
+  }
+
+  input InputCard {
+    title: String
+    description: String
   }
 `;
 
 const resolvers = {
   Query: {
-    lists: () => lists
+    lists: () => lists,
+  },
+  Mutation: {
+    replaceLists: (parent, args, context, info) => lists = args.lists
   }
 };
 
