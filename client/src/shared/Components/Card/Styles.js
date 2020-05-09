@@ -12,4 +12,9 @@ export const CardContainer = styled.div`
   ${global.borderRadius}
   ${props => global.draggable(props)}
   ${global.noSelect}
+  ${global.transition('background-color')}
+  &:hover {
+    cursor: pointer;
+    background-color: ${color.bg};
+  }
 `;

@@ -10,12 +10,16 @@ export const zIndexes = {
   lower: 0,
   mid: 1,
   upper: 2,
-}
+};
 
 export const global = {
   borderRadius: 'border-radius: 4px;',
   boxShadow: 'box-shadow: 0 2px 4px 0 rgba(14, 25, 51, 0.1);',
   boxShadowLift: 'box-shadow: 0 5px 10px 0 rgba(14, 25, 51, 0.1);',
+  transition: (props) => css`
+    transition: all 200ms cubic-bezier(0.2, 0, 0, 1);
+    transition: ${props};
+  `,
   draggable: (props, weight) => css`
     transition: all 200ms cubic-bezier(0.2, 0, 0, 1);
     transition-property: transform, box-shadow;
